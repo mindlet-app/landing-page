@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "LTSaeadaMedium";
+  src: url("/fonts/LTSaeada-Medium.otf") format("opentype");
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway-Variable.ttf") format("truetype");
+  font-optical-sizing: auto;
+}
+
+@font-face {
+  font-family: "RalewayItalic";
+  src: url("/fonts/Raleway-Italic-Variable.ttf") format("truetype");
+  font-optical-sizing: auto;
+}
+
+@theme {
+  --font-saeada: "LTSaeadaMedium", system-ui, sans-serif;
+  --font-raleway: "Raleway", system-ui, sans-serif;
+  --font-raleway-italic: "RalewayItalic", system-ui, sans-serif;
+}

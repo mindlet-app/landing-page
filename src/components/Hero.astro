@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import graphHero from '../assets/graph-hero.svg';
+---
+
+<section class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+  <div class="absolute inset-0 w-full h-full p-20">
+    <Image
+      src={graphHero}
+      alt="Background graph"
+      class="w-full h-full object-contain object-center"
+    />
+  </div>
+  <div class="relative z-10">
+    <h1 class="mb-2 font-saeada text-center text-5xl lg:text-7xl xl:text-8xl">
+      L&apos;apprentissage collaboratif,<br />
+      réinventé par l'IA
+    </h1>
+
+    <p
+      class="font-raleway font-light text-center text-xl lg:text-2xl xl:text-3xl"
+    >
+      Le premier <span class="text-emerald-400 font-semibold">réseau social</span>
+      où apprendre rime avec partager.
+    </p>
+  </div>
+</section>
