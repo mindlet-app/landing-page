@@ -1,0 +1,41 @@
+---
+import About from "./partials/About.astro";
+import Contact from "./partials/Contact.astro";
+import Copyright from "./partials/Copyright.astro";
+import Legal from "./partials/Legal.astro";
+import Logo from "./partials/Logo.astro";
+import Newsletter from "./partials/Newsletter.astro";
+import Technology from "./partials/Technology.astro";
+---
+
+<footer class="bg-white py-12 px-4 md:px-8 border-t border-gray-100">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Colonne 1: Logo et Contact -->
+      <div class="space-y-8">
+        <div>
+          <Logo />
+          <Contact />
+        </div>
+        <Newsletter />
+      </div>
+
+      <!-- Colonne 2: À propos -->
+      <div>
+        <About />
+      </div>
+
+      <!-- Colonne 3: Technologie -->
+      <div>
+        <Technology />
+      </div>
+
+      <!-- Colonne 4: Légal -->
+      <div>
+        <Legal />
+      </div>
+    </div>
+
+    <Copyright />
+  </div>
+</footer>

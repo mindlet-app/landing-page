@@ -1,9 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import graphHero from '../assets/graph-hero.svg';
+import { Image } from "astro:assets";
+import graphHero from "../assets/graph-hero.svg";
 ---
 
-<section class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden">
+<section
+  class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden"
+>
   <div class="absolute inset-0 w-full h-full p-20">
     <Image
       src={graphHero}
@@ -17,10 +19,10 @@ import graphHero from '../assets/graph-hero.svg';
       réinventé par l'IA
     </h1>
 
-    <p
-      class="font-raleway font-light text-center text-xl lg:text-2xl xl:text-3xl"
-    >
-      Le premier <span class="text-emerald-400 font-semibold">réseau social</span>
+    <p class="font-light text-center text-xl lg:text-2xl xl:text-3xl">
+      Le premier <span class="text-emerald-400 font-semibold"
+        >réseau social</span
+      >
       où apprendre rime avec partager.
     </p>
   </div>
