@@ -23,3 +23,7 @@
   --font-raleway: "Raleway", system-ui, sans-serif;
   --font-raleway-italic: "RalewayItalic", system-ui, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
