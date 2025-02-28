@@ -4,23 +4,66 @@ import Button from "./ui/Button";
 import Title from "./ui/Title";
 ---
 
-<nav class="flex justify-between items-center p-8">
-  <div class="flex items-center gap-x-8">
-    <div class="flex items-center gap-x-2">
-      <Image
-        class="rounded-full"
-        src="/images/logo-primary.svg"
-        alt="Mindlet"
-        width="40"
-        height="40"
-      />
-      <Title className="text-xl m-0">Mindlet</Title>
-    </div>
-    <ul class="flex gap-x-4">
-      <li><a href="#modes-apprentissage">Modes d'apprentissage</a></li>
-    </ul>
+<nav
+  id="navbar"
+  class="fixed top-0 w-full py-4 px-10 transition-all duration-300 z-50"
+>
+  <!-- Arrière-plan avec dégradé et flou -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-transparent backdrop-blur-xs"
+  >
   </div>
-  <div class="flex">
-    <Button> Commencer </Button>
+
+  <!-- Contenu de la navbar -->
+  <div class="relative flex justify-between items-center w-full">
+    <div class="flex items-center gap-x-8">
+      <div class="flex items-center gap-x-2">
+        <Image
+          class="rounded-full"
+          src="/images/logo-primary.svg"
+          alt="Mindlet"
+          width="40"
+          height="40"
+        />
+        <Title className="text-xl m-0">Mindlet</Title>
+      </div>
+      <ul class="flex gap-x-4">
+        <li>
+          <a
+            href="#modes-apprentissage"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors"
+            >Modes d'apprentissage</a>
+        </li>
+      </ul>
+    </div>
+    <div class="flex">
+      <Button> Commencer </Button>
+    </div>
   </div>
 </nav>
+
+<script>
+  // Attendre que le DOM soit complètement chargé
+  document.addEventListener("DOMContentLoaded", () => {
+    let lastScrollY = window.scrollY;
+    const navbar = document.getElementById("navbar");
+
+    // Vérifier si l'élément navbar existe avant d'ajouter l'écouteur d'événements
+    if (navbar) {
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+
+        // Si on défile vers le bas et qu'on n'est pas tout en haut de la page
+        if (currentScrollY > lastScrollY && currentScrollY > 50) {
+          navbar.classList.add("-translate-y-full");
+        }
+        // Si on défile vers le haut
+        else if (currentScrollY < lastScrollY) {
+          navbar.classList.remove("-translate-y-full");
+        }
+
+        lastScrollY = currentScrollY;
+      });
+    }
+  });
+</script>
