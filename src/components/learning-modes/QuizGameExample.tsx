@@ -121,7 +121,7 @@ const QuizGameExample: React.FC = () => {
           const showCorrect = hasAnswered && answer.correct;
           const showIncorrect = hasAnswered && isSelected && !answer.correct;
 
-          let cardClassName = "";
+          let cardClassName = "hover:-translate-y-1 transform transition-all";
           if (showCorrect) cardClassName = "bg-emerald-100 border-emerald-500";
           if (showIncorrect) cardClassName = "bg-rose-100 border-rose-500";
 
@@ -135,7 +135,9 @@ const QuizGameExample: React.FC = () => {
               <AnswerCard className={cardClassName}>
                 <span className="font-medium">{answer.text}</span>
                 {showCorrect && (
-                  <CheckIcon className="h-5 w-5 text-emerald-500" />
+                  <div className="absolute top-2 right-2">
+                    <CheckIcon className="h-5 w-5 text-emerald-500" />
+                  </div>
                 )}
               </AnswerCard>
             </button>
