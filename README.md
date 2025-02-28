@@ -1,48 +1,45 @@
-# Astro Starter Kit: Basics
+# Mindlet - L'apprentissage collaboratif réinventé par l'IA
 
-```sh
-npm create astro@latest -- --template basics
-```
+![Mindlet Logo](https://mindlet.app/logo.png)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 📚 À propos de Mindlet
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Mindlet est une plateforme d'apprentissage collaboratif propulsée par l'intelligence artificielle. Notre mission est de transformer l'éducation en ligne en créant le premier réseau social où apprendre rime avec partager.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Notre application permet aux utilisateurs de créer, partager et utiliser différents outils d'apprentissage adaptés à leurs besoins spécifiques, qu'il s'agisse d'apprendre une langue, de réviser pour un examen ou d'acquérir de nouvelles compétences.
 
-## 🚀 Project Structure
+## 🚀 Fonctionnalités principales
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Flashcards** : Créez vos propres flashcards ou utilisez celles partagées par la communauté. Notre algorithme intelligent adapte les intervalles de révision selon vos performances.
+- **Quiz** : Des quiz interactifs générés intelligemment à partir de vos flashcards et du contenu partagé.
+- **Association** : Renforcez votre capacité à faire des liens entre concepts et définitions avec cet exercice stimulant.
+- **Réseau social éducatif** : Partagez vos connaissances et apprenez des autres utilisateurs.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 🛠️ Technologies utilisées
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Ce site a été développé avec [Astro](https://astro.build/), un framework web moderne qui offre d'excellentes performances et une expérience de développement optimale.
 
-## 🧞 Commands
+### Stack technique
 
-All commands are run from the root of the project, from a terminal:
+- **Frontend** : Astro, HTML, CSS, JavaScript
+- **Mobile** : React Native, Expo, TypeScript
+- **Backend** : Laravel, FastAPI
+- **IA** : Python, Mistral, TensorFlow, Scikit-learn
+- **Base de données** : PostgreSQL, ChromaDB
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🌐 Engagement et valeurs
 
-## 👀 Want to learn more?
+- **Protection des données** : Hébergement européen et respect du RGPD
+- **Accessibilité** : Notre plateforme est conçue pour être accessible à tous
+- **Éducation pour tous** : Mindlet est gratuit pour les étudiants et les enseignants
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## 📞 Contact
+
+- Site web : [mindlet.app](https://mindlet.app)
+- Email : contact@mindlet.app
+- Téléphone : +33783267595
+
+---
+
+© 2025 Mindlet. Tous droits réservés.
+L'apprentissage collaboratif, réinventé par l'IA.
