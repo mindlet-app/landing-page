@@ -1,5 +1,5 @@
 ---
-
+// Importations et logique côté serveur si nécessaire
 ---
 
 <div>
@@ -8,9 +8,10 @@
     Restez informés des dernières nouveautés et astuces pour optimiser votre
     apprentissage collaboratif.
   </p>
-  <form class="flex mt-2">
+  <form id="newsletter-form" class="flex mt-2">
     <input
       type="email"
+      id="email-input"
       placeholder="Votre email"
       class="px-4 py-2 w-full border border-zinc-200 rounded-l-md focus:outline-none focus:ring-2 focus:ring-emerald-300"
       required
@@ -22,4 +23,89 @@
       S'abonner
     </button>
   </form>
+  <div id="newsletter-message" class="mt-2 text-sm hidden"></div>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("newsletter-form");
+    const emailInput = document.getElementById("email-input");
+    const messageDiv = document.getElementById("newsletter-message");
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        if (!emailInput) return;
+        const email = emailInput.value.trim();
+
+        if (!email) {
+          showMessage("Veuillez entrer une adresse email valide.", "error");
+          return;
+        }
+
+        // Afficher un message de chargement
+        showMessage("Inscription en cours...", "loading");
+
+        try {
+          const response = await fetch(
+            "http://127.0.0.1:8000/api/newsletters/subscribe",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email }),
+            }
+          );
+
+          const data = await response.json();
+
+          if (response.ok) {
+            // Succès
+            showMessage(
+              "Merci de vous être abonné à la newsletter de Mindlet ! Vous recevrez nos dernières mises à jour et astuces directement dans votre boîte mail.",
+              "success"
+            );
+            if (emailInput) emailInput.value = "";
+          } else {
+            // Erreur côté serveur
+            showMessage(
+              data.message || "Une erreur est survenue. Veuillez réessayer.",
+              "error"
+            );
+          }
+        } catch (error) {
+          // Erreur de connexion
+          showMessage(
+            "Impossible de se connecter au serveur. Veuillez vérifier votre connexion et réessayer.",
+            "error"
+          );
+          console.error("Erreur:", error);
+        }
+      });
+    }
+
+    function showMessage(text, type) {
+      messageDiv.textContent = text;
+      messageDiv.classList.remove(
+        "hidden",
+        "text-emerald-600",
+        "text-red-600",
+        "text-zinc-600"
+      );
+
+      switch (type) {
+        case "success":
+          messageDiv.classList.add("text-emerald-600");
+          break;
+        case "error":
+          messageDiv.classList.add("text-red-600");
+          break;
+        case "loading":
+          messageDiv.classList.add("text-zinc-600");
+          break;
+      }
+    }
+  });
+</script>
