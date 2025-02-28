@@ -9,7 +9,10 @@ const Title: React.FC<TitleProps> = ({ className, children, ...props }) => {
   return (
     <h4
       className={twMerge(
-        clsx("text-4xl font-bold font-saeada mb-6 text-zinc-900", className)
+        clsx(
+          "text-2xl sm:text-3xl md:text-4xl font-bold font-saeada mb-6 text-zinc-900",
+          className
+        )
       )}
       {...props}
     >

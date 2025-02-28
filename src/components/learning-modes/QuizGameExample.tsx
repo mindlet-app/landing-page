@@ -110,7 +110,7 @@ const QuizGameExample: React.FC = () => {
   return (
     <div className="relative flex flex-col space-y-4 order-2 lg:order-1">
       <QuestionCard>
-        <h4 className="text-xl font-semibold font-saeada text-center">
+        <h4 className="text-lg sm:text-xl font-semibold font-saeada text-center">
           {currentQuestion.question}
         </h4>
       </QuestionCard>

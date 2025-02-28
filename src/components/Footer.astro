@@ -1,11 +1,11 @@
 ---
-import About from "./partials/About.astro";
-import Contact from "./partials/Contact.astro";
-import Copyright from "./partials/Copyright.astro";
-import Legal from "./partials/Legal.astro";
-import Logo from "./partials/Logo.astro";
-import Newsletter from "./partials/Newsletter.astro";
-import Technology from "./partials/Technology.astro";
+import About from "./footer/About.astro";
+import Contact from "./footer/Contact.astro";
+import Copyright from "./footer/Copyright.astro";
+import Legal from "./footer/Legal.astro";
+import Logo from "./footer/Logo.astro";
+import Newsletter from "./footer/Newsletter.astro";
+import Technology from "./footer/Technology.astro";
 ---
 
 <footer class="bg-white py-12 px-4 md:px-8 border-t border-zinc-100">
@@ -13,7 +13,7 @@ import Technology from "./partials/Technology.astro";
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <!-- Colonne 1: Logo et Contact -->
       <div class="space-y-8">
-        <div>
+        <div id="contact">
           <Logo />
           <Contact />
         </div>

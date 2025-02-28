@@ -2,11 +2,12 @@
 import { Image } from "astro:assets";
 import Button from "./ui/Button";
 import Title from "./ui/Title";
+import { LucideMenu } from "lucide-react";
 ---
 
 <nav
   id="navbar"
-  class="fixed top-0 w-full py-4 px-10 transition-all duration-300 z-50"
+  class="fixed top-0 w-full py-3 px-4 md:py-4 md:px-10 transition-all duration-300 z-50"
 >
   <!-- Arrière-plan avec dégradé et flou -->
   <div
@@ -16,18 +17,21 @@ import Title from "./ui/Title";
 
   <!-- Contenu de la navbar -->
   <div class="relative flex justify-between items-center w-full">
-    <div class="flex items-center gap-x-8">
+    <div class="flex items-center gap-x-2 md:gap-x-8">
       <div class="flex items-center gap-x-2">
         <Image
-          class="rounded-full"
+          class="rounded-full w-8 h-8 md:w-10 md:h-10"
           src="/images/logo.svg"
           alt="Mindlet"
           width="40"
           height="40"
         />
-        <Title className="text-xl m-0">Mindlet</Title>
+        <h1 class="text-lg md:text-xl font-bold font-saeada text-zinc-900">
+          Mindlet
+        </h1>
       </div>
-      <ul class="flex gap-x-4">
+      <!-- Menu pour desktop -->
+      <ul class="hidden md:flex gap-x-6">
         <li>
           <a
             href="#modes-apprentissage"
@@ -35,10 +39,56 @@ import Title from "./ui/Title";
             >Modes d'apprentissage</a
           >
         </li>
+        <li>
+          <a
+            href="#contact"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors"
+            >Contact</a
+          >
+        </li>
       </ul>
     </div>
-    <div class="flex">
-      <Button> Commencer </Button>
+
+    <div class="flex items-center gap-x-4">
+      <Button className="text-sm md:text-base px-3 py-1.5 md:px-4 md:py-2">
+        Commencer
+      </Button>
+
+      <!-- Bouton hamburger pour mobile -->
+      <button
+        id="menu-toggle"
+        class="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none"
+        aria-label="Menu"
+      >
+        <LucideMenu size={24} />
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu mobile -->
+  <div
+    id="mobile-menu"
+    class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
+  >
+    <div
+      class="py-4 px-2 bg-white/90 backdrop-blur-sm rounded-lg mt-2 shadow-sm"
+    >
+      <ul class="flex flex-col items-center gap-y-4">
+        <li>
+          <a
+            href="#modes-apprentissage"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
+            >Modes d'apprentissage</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
+            >Contact</a
+          >
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
@@ -48,6 +98,8 @@ import Title from "./ui/Title";
   document.addEventListener("DOMContentLoaded", () => {
     let lastScrollY = window.scrollY;
     const navbar = document.getElementById("navbar");
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
 
     // Vérifier si l'élément navbar existe avant d'ajouter l'écouteur d'événements
     if (navbar) {
@@ -64,6 +116,28 @@ import Title from "./ui/Title";
         }
 
         lastScrollY = currentScrollY;
+      });
+    }
+
+    // Gestion du menu mobile
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("max-h-0")) {
+          mobileMenu.classList.remove("max-h-0");
+          mobileMenu.classList.add("max-h-96"); // Hauteur suffisante pour le contenu
+        } else {
+          mobileMenu.classList.remove("max-h-96");
+          mobileMenu.classList.add("max-h-0");
+        }
+      });
+
+      // Fermer le menu mobile quand on clique sur un lien
+      const mobileLinks = mobileMenu.querySelectorAll("a");
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("max-h-96");
+          mobileMenu.classList.add("max-h-0");
+        });
       });
     }
   });

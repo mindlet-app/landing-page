@@ -1,30 +1,37 @@
 ---
 import { Image } from "astro:assets";
-import graphHero from "../assets/graph-hero.svg";
+import hero from "../assets/hero.svg";
+import heroMobile from "../assets/hero-mobile.svg";
 ---
 
 <section
-  class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden"
+  xl:text-8xl
+  class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden px-4 md:px-0"
 >
-  <div class="absolute inset-0 w-full h-full p-24 animate-fade-in-scale">
+  <div class="absolute inset-0 w-full h-full p-4 md:p-24 animate-fade-in-scale">
     <Image
-      src={graphHero}
+      src={heroMobile}
       alt="Background graph"
-      class="w-full h-full object-contain object-center"
+      class="w-full h-full object-contain object-center opacity-80 block sm:hidden"
+    />
+    <Image
+      src={hero}
+      alt="Background graph"
+      class="w-full h-full object-contain object-center opacity-80 hidden sm:block"
     />
   </div>
-  <div class="relative z-10">
+  <div class="relative z-10 mt-16 md:mt-0 drop-shadow">
     <h1
-      class="mb-2 font-saeada text-center text-5xl lg:text-7xl xl:text-8xl animate-fade-in-up"
+      class="mb-2 font-saeada text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl animate-fade-in-up text-shadow-sm"
     >
-      L&apos;apprentissage collaboratif,<br />
+      L&apos;apprentissage<br class="md:hidden" /> collaboratif,<br />
       réinventé par l'IA
     </h1>
 
     <p
-      class="font-light text-center text-xl xl:text-2xl animate-fade-in-up animation-delay-300"
+      class="relative z-10 font-light text-center text-base sm:text-lg md:text-xl xl:text-2xl animate-fade-in-up animation-delay-300 px-4 py-2 drop-shadow-2xl"
     >
-      Le premier <span class="text-emerald-400 font-semibold"
+      Le premier <span class="text-emerald-500 font-semibold"
         >réseau social</span
       >
       où apprendre rime avec partager.
@@ -67,5 +74,9 @@ import graphHero from "../assets/graph-hero.svg";
 
   .animation-delay-300 {
     animation-delay: 300ms;
+  }
+
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   }
 </style>
