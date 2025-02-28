@@ -6,7 +6,7 @@ import graphHero from "../assets/graph-hero.svg";
 <section
   class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden"
 >
-  <div class="absolute inset-0 w-full h-full p-20">
+  <div class="absolute inset-0 w-full h-full p-24 animate-fade-in-scale">
     <Image
       src={graphHero}
       alt="Background graph"
@@ -14,12 +14,16 @@ import graphHero from "../assets/graph-hero.svg";
     />
   </div>
   <div class="relative z-10">
-    <h1 class="mb-2 font-saeada text-center text-5xl lg:text-7xl xl:text-8xl">
+    <h1
+      class="mb-2 font-saeada text-center text-5xl lg:text-7xl animate-fade-in-up"
+    >
       L&apos;apprentissage collaboratif,<br />
       réinventé par l'IA
     </h1>
 
-    <p class="font-light text-center text-xl lg:text-2xl xl:text-3xl">
+    <p
+      class="font-light text-center text-xl animate-fade-in-up animation-delay-300"
+    >
       Le premier <span class="text-emerald-400 font-semibold"
         >réseau social</span
       >
@@ -27,3 +31,41 @@ import graphHero from "../assets/graph-hero.svg";
     </p>
   </div>
 </section>
+
+<style>
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in-scale {
+    animation: fadeInScale 1.2s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+</style>
