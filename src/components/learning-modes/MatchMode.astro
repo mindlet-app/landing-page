@@ -1,160 +1,28 @@
 ---
-
+import HintText from "../ui/HintText";
+import Paragraph from "../ui/Paragraph";
+import Title from "../ui/Title";
+import MatchGameExample from "./MatchGameExample";
 ---
 
 <div class="mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
   <div>
-    <h3 class="text-3xl font-bold mb-6">Association</h3>
-    <p class="text-zinc-700 leading-relaxed">
+    <Title>Association</Title>
+    <Paragraph>
       L'association est un exercice stimulant qui renforce votre capacité à
       faire des liens entre concepts et définitions.
-    </p>
-    <p class="text-zinc-700 leading-relaxed mt-4">
+    </Paragraph>
+    <Paragraph className="mt-4">
       Dans ce mode, vous devez associer correctement des paires de termes ou de
       concepts qui vont ensemble. Cet exercice développe votre mémoire
       associative et votre compréhension des relations entre différentes
       notions. Particulièrement efficace pour l'apprentissage des langues, des
       terminologies spécifiques ou des relations de cause à effet.
-    </p>
-    <p class="text-secondary-600 mt-6 font-medium flex items-center">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 mr-2"
-        viewBox="0 0 20 20"
-        fill="currentColor"
-      >
-        <path
-          fill-rule="evenodd"
-          d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z"
-          clip-rule="evenodd"></path>
-      </svg>
-      Cliquez sur les cartes pour les associer
-    </p>
+    </Paragraph>
+    <HintText className="mt-6">
+      Cliquez sur les cartes pour les associer →
+    </HintText>
   </div>
 
-  <div class="learning-container">
-    <div class="card-container">
-      <div class="association-card shine-effect" data-pair="france">
-        <p class="text-center font-medium">France</p>
-      </div>
-      <div class="association-card shine-effect" data-pair="france">
-        <p class="text-center font-medium">Paris</p>
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="association-card shine-effect" data-pair="espagne">
-        <p class="text-center font-medium">Espagne</p>
-      </div>
-      <div class="association-card shine-effect" data-pair="espagne">
-        <p class="text-center font-medium">Madrid</p>
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="association-card shine-effect" data-pair="italie">
-        <p class="text-center font-medium">Italie</p>
-      </div>
-      <div class="association-card shine-effect" data-pair="italie">
-        <p class="text-center font-medium">Rome</p>
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="association-card shine-effect" data-pair="allemagne">
-        <p class="text-center font-medium">Allemagne</p>
-      </div>
-      <div class="association-card shine-effect" data-pair="allemagne">
-        <p class="text-center font-medium">Berlin</p>
-      </div>
-    </div>
-  </div>
+  <MatchGameExample />
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".association-card");
-    let selectedCard: HTMLElement | null = null;
-    let matchedPairs = 0;
-    const totalPairs = 4; // France-Paris, Espagne-Madrid, Italie-Rome, Allemagne-Berlin
-
-    cards.forEach((card) => {
-      card.addEventListener("click", () => {
-        const clickedCard = card as HTMLElement;
-
-        // Si la carte est déjà associée, ne rien faire
-        if (clickedCard.classList.contains("matched")) {
-          return;
-        }
-
-        // Si aucune carte n'est sélectionnée
-        if (!selectedCard) {
-          selectedCard = clickedCard;
-          clickedCard.classList.add("selected");
-          return;
-        }
-
-        // Si la même carte est cliquée à nouveau
-        if (selectedCard === clickedCard) {
-          selectedCard.classList.remove("selected");
-          selectedCard = null;
-          return;
-        }
-
-        // Vérifier si les cartes correspondent
-        const pair1 = selectedCard.getAttribute("data-pair");
-        const pair2 = clickedCard.getAttribute("data-pair");
-
-        if (pair1 === pair2) {
-          // Les cartes correspondent
-          selectedCard.classList.remove("selected");
-          selectedCard.classList.add("matched");
-          clickedCard.classList.add("matched");
-
-          // Ajouter l'icône de vérification
-          const checkIcon1 = document.createElement("div");
-          checkIcon1.classList.add("check-icon");
-          checkIcon1.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-            </svg>
-          `;
-          selectedCard.appendChild(checkIcon1);
-
-          const checkIcon2 = document.createElement("div");
-          checkIcon2.classList.add("check-icon");
-          checkIcon2.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-            </svg>
-          `;
-          clickedCard.appendChild(checkIcon2);
-
-          selectedCard = null;
-          matchedPairs++;
-
-          // Vérifier si toutes les paires sont associées
-          if (matchedPairs === totalPairs) {
-            setTimeout(() => {
-              alert(
-                "Félicitations ! Vous avez associé toutes les paires correctement."
-              );
-            }, 500);
-          }
-        } else {
-          // Les cartes ne correspondent pas
-          clickedCard.classList.add("selected");
-
-          setTimeout(() => {
-            selectedCard?.classList.remove("selected");
-            clickedCard.classList.remove("selected");
-            selectedCard = null;
-          }, 1000);
-        }
-      });
-    });
-  });
-</script>
-
-<style>
-  .text-secondary-600 {
-    color: #6366f1;
-  }
-</style>

@@ -1,6 +1,19 @@
+---
+import { Image } from "astro:assets";
+import Button from "./ui/Button";
+---
+
 <nav class="flex justify-between items-center p-8">
   <div class="flex items-center gap-x-8">
-    <h1>Mindlet</h1>
+    <div class="rounded-full">
+      <Image
+        src="/images/logo-primary.svg"
+        alt="Mindlet"
+        width="40"
+        height="40"
+      />
+      <h1>Mindlet</h1>
+    </div>
     <ul class="flex gap-x-4">
       <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
@@ -8,6 +21,6 @@
     </ul>
   </div>
   <div class="flex">
-    <a href=""><button>Commencer</button></a>
+    <Button> Commencer </Button>
   </div>
 </nav>
