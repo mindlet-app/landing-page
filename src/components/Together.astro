@@ -1,0 +1,33 @@
+---
+import Paragraph from "./ui/Paragraph";
+import graphTogether from "../assets/graph-together.svg";
+import { Image } from "astro:assets";
+---
+
+<section id="modes-apprentissage" class="bg-zinc-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16">
+      Apprendre enesmble
+    </h2>
+    <Paragraph>
+      It has survived not only five centuries, but also the leap into electronic
+      typesetting, remaining essentially unchanged. It was popularised in the
+      1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+      and more recently with desktop publishing software like Aldus PageMaker
+      including versions of Lorem Ipsum.
+    </Paragraph>
+
+    <Image
+      src={graphTogether}
+      alt="Background graph"
+      class="w-full md:w-2/3 h-full object-contain object-center mx-auto pt-8 md:pt-14"
+    />
+
+    <div class="grid grid-cols-2 gap-4">
+      <div class="w-full h-[50px] bg-red-500"></div>
+      <div class="w-full h-[50px] bg-red-500"></div>
+      <div class="w-full h-[50px] bg-red-500"></div>
+      <div class="w-full h-[50px] bg-red-500"></div>
+    </div>
+  </div>
+</section>

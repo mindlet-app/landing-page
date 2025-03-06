@@ -19,7 +19,11 @@ import Title from "../ui/Title";
       intervalles de révision en fonction de vos performances, vous permettant
       de mémoriser plus efficacement et durablement.
     </Paragraph>
-    <HintText className="mt-6">Survolez les cartes pour voir l'effet →</HintText
+    <HintText className="mt-6 hidden lg:block"
+      >Survolez les cartes pour voir l'effet →</HintText
+    >
+    <HintText className="mt-6 lg:hidden"
+      >Touchez les cartes pour voir l'effet →</HintText
     >
   </div>
 
@@ -58,13 +62,41 @@ import Title from "../ui/Title";
     z-index: 1;
   }
 
-  #flashcard-wrapper:hover .card-front {
+  #flashcard-wrapper:hover .card-front,
+  #flashcard-wrapper.active .card-front {
     transform: translateX(15%) translateY(15%) rotate(-2deg);
     z-index: 1;
   }
 
-  #flashcard-wrapper:hover .card-back {
+  #flashcard-wrapper:hover .card-back,
+  #flashcard-wrapper.active .card-back {
     transform: translateX(-15%) translateY(-15%) rotate(3deg);
     z-index: 2;
   }
 </style>
+
+<script>
+  // Gestion des événements tactiles pour les appareils mobiles
+  document.addEventListener("DOMContentLoaded", () => {
+    const flashcardWrapper = document.getElementById("flashcard-wrapper");
+
+    if (flashcardWrapper) {
+      // Pour les appareils tactiles
+      flashcardWrapper.addEventListener("touchstart", () => {
+        flashcardWrapper.classList.add("active");
+      });
+
+      flashcardWrapper.addEventListener("touchend", () => {
+        // Délai pour permettre de voir l'effet avant de revenir
+        setTimeout(() => {
+          flashcardWrapper.classList.remove("active");
+        }, 1500); // 1.5 secondes d'affichage
+      });
+
+      // S'assurer que la classe est enlevée lorsque l'utilisateur quitte la zone
+      flashcardWrapper.addEventListener("mouseleave", () => {
+        flashcardWrapper.classList.remove("active");
+      });
+    }
+  });
+</script>
