@@ -2,17 +2,12 @@
 import FlashcardMode from "./learning-modes/FlashcardMode.astro";
 import QuizMode from "./learning-modes/QuizMode.astro";
 import MatchMode from "./learning-modes/MatchMode.astro";
-import Title from "./ui/Title";
+import BigTitle from "./ui/BigTitle";
 ---
 
 <section id="modes-apprentissage" class="pt-16 bg-zinc-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <Title
-      className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16"
-    >
-      Nos modes d'apprentissage
-    </Title>
-
+    <BigTitle> Nos modes d'apprentissage </BigTitle>
     <FlashcardMode />
     <QuizMode />
     <MatchMode />

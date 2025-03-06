@@ -65,7 +65,7 @@ export const AnswerCard: React.FC<AnswerCardProps> = ({
   return (
     <Card
       className={clsx(
-        "bg-linear-120 from-[#f8fafc] to-[#eef2ff]",
+        "bg-linear-180 from-[#f8fafc] to-[#F9F5FF]",
         { "absolute w-[80%] h-[80%]": absolute },
         className
       )}

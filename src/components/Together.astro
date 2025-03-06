@@ -2,32 +2,127 @@
 import Paragraph from "./ui/Paragraph";
 import graphTogether from "../assets/graph-together.svg";
 import { Image } from "astro:assets";
+import Title from "./ui/Title";
+import BigTitle from "./ui/BigTitle";
+import messages from "../assets/messages.svg";
+import socialNetwork from "../assets/social-network.svg";
+import versus from "../assets/versus.svg";
+import copyCollection from "../assets/copy-collection.svg";
+import { LucideArrowRight, LucideBrain } from "lucide-react";
 ---
 
 <section id="modes-apprentissage" class="bg-zinc-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-16">
-      Apprendre enesmble
-    </h2>
-    <Paragraph>
-      It has survived not only five centuries, but also the leap into electronic
-      typesetting, remaining essentially unchanged. It was popularised in the
-      1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-      and more recently with desktop publishing software like Aldus PageMaker
-      including versions of Lorem Ipsum.
-    </Paragraph>
+  <div class="container mx-auto max-w-6xl space-y-8">
+    <div class="text-center">
+      <BigTitle> Apprenez mieux, ensemble </BigTitle>
+      <Paragraph className="max-w-2xl mx-auto">
+        Mindlet combine les méthodes d'apprentissage les plus efficaces avec la
+        puissance du social pour une expérience éducative révolutionnaire.
+      </Paragraph>
+    </div>
 
     <Image
       src={graphTogether}
       alt="Background graph"
-      class="w-full md:w-2/3 h-full object-contain object-center mx-auto pt-8 md:pt-14"
+      class="w-full md:w-3/4 h-full object-contain object-center mx-auto"
     />
 
-    <div class="grid grid-cols-2 gap-4">
-      <div class="w-full h-[50px] bg-red-500"></div>
-      <div class="w-full h-[50px] bg-red-500"></div>
-      <div class="w-full h-[50px] bg-red-500"></div>
-      <div class="w-full h-[50px] bg-red-500"></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div class="flex flex-col">
+        <Title className="text-center">Messages et groupes</Title>
+        <Paragraph>
+          Créez ou rejoignez des groupes thématiques pour partager des
+          collections de cartes. Collaborez en temps réel pour enrichir vos
+          connaissances.
+        </Paragraph>
+        <Image
+          src={messages}
+          alt="Feature 1"
+          class="w-[50%] mx-auto mb-4 aspect-3/2"
+        />
+      </div>
+      <div class="flex flex-col">
+        <Title className="text-center">Reseau social</Title>
+        <Paragraph>
+          Connectez-vous avec d'autres apprenants, partagez vos connaissances et
+          trouvez des partenaires d'étude partout dans le monde.
+        </Paragraph>
+        <Image
+          src={socialNetwork}
+          alt="Feature 1"
+          class="w-[50%] mx-auto mb-4 aspect-3/2"
+        />
+      </div>
+      <div class="flex flex-col">
+        <Title className="text-center">Défis entre amis</Title>
+        <Paragraph>
+          Lancez des défis à vos amis, suivez vos progrès sur les tableaux de
+          classement et gagnez des badges.
+        </Paragraph>
+        <div class="flex flex-1 justify-center">
+          <Image
+            src={versus}
+            alt="Feature 1"
+            class="w-[50%] mx-auto mb-4 aspect-3/2"
+          />
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <Title className="text-center">Partagez vos collections</Title>
+        <Paragraph>
+          Créez des collections de cartes et partagez-les avec vos amis ou la
+          communauté. Recevez des suggestions de cartes à ajouter.
+        </Paragraph>
+        <Image
+          src={copyCollection}
+          alt="Feature 1"
+          class="w-[50%] mx-auto mb-4 aspect-3/2"
+        />
+      </div>
+    </div>
+
+    <div
+      class="mt-12 md:mt-16 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-xl shadow-md overflow-hidden"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div class="p-6 md:p-8 flex flex-col justify-center">
+          <span class="text-emerald-100 text-sm font-medium mb-2">NOUVEAU</span>
+          <h3 class="text-white text-2xl md:text-3xl font-semibold mb-4">
+            IA collaborative
+          </h3>
+          <p class="text-emerald-50 mb-6">
+            Notre intelligence artificielle analyse les performances de tous les
+            utilisateurs pour optimiser les parcours d'apprentissage et suggérer
+            les meilleures ressources pour chaque sujet.
+          </p>
+          <a
+            href="#en-savoir-plus"
+            class="inline-flex items-center gap-2 text-white hover:text-emerald-100 transition-colors w-fit"
+          >
+            En savoir plus
+            <LucideArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+        <div class="bg-emerald-400 p-6 flex items-center justify-center">
+          <div class="relative w-full max-w-xs aspect-square">
+            <div
+              class="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-full animate-pulse-slow"
+            >
+            </div>
+            <div
+              class="absolute inset-4 bg-white/20 backdrop-blur-sm rounded-full animate-pulse-slow animation-delay-500"
+            >
+            </div>
+            <div
+              class="absolute inset-8 bg-white/30 backdrop-blur-sm rounded-full animate-pulse-slow animation-delay-1000"
+            >
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <LucideBrain className="w-16 h-16 text-white" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
