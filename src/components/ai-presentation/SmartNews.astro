@@ -1,0 +1,200 @@
+---
+import { QuestionCard } from "../ui/Card";
+import Paragraph from "../ui/Paragraph";
+import SmallTitle from "../ui/SmallTitle";
+---
+
+<div
+  class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 mb-16"
+>
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col lg:flex-row gap-10 items-center">
+      <div class="lg:w-1/2">
+        <div class="flex items-center gap-5 mb-6">
+          <div class="p-3 bg-purple-100 rounded-lg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 text-purple-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
+              ></path>
+            </svg>
+          </div>
+          <SmallTitle className="mb-0"> Actualités intelligentes </SmallTitle>
+        </div>
+
+        <Paragraph className="mb-6">
+          Transformez l'actualité en opportunité d'apprentissage. Notre IA
+          analyse les derniers événements et crée des flashcards qui renforcent
+          votre culture générale.
+        </Paragraph>
+
+        <div class="mb-6 space-y-4">
+          <div class="flex gap-3">
+            <div class="w-1/3">
+              <div
+                class="px-3 py-1.5 bg-purple-100 text-purple-700 text-xs font-medium rounded-full inline-flex"
+              >
+                Par média
+              </div>
+              <p class="text-sm text-slate-500 mt-1">
+                Le Figaro, New York Times, The Guardian...
+              </p>
+            </div>
+            <div class="w-1/3">
+              <div
+                class="px-3 py-1.5 bg-blue-100 text-blue-700 text-xs font-medium rounded-full inline-flex"
+              >
+                Par catégorie
+              </div>
+              <p class="text-sm text-slate-500 mt-1">
+                Politique, Économie, Sciences, Culture...
+              </p>
+            </div>
+            <div class="w-1/3">
+              <div
+                class="px-3 py-1.5 bg-teal-100 text-teal-700 text-xs font-medium rounded-full inline-flex"
+              >
+                Sur mesure
+              </div>
+              <p class="text-sm text-slate-500 mt-1">
+                Créez vos propres collections thématiques
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="space-y-3 text-slate-600">
+          <li class="flex items-center">
+            <svg
+              class="w-5 h-5 mr-2 text-purple-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            Transformez les actualités en flashcards éducatives
+          </li>
+          <li class="flex items-center">
+            <svg
+              class="w-5 h-5 mr-2 text-purple-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            Apprenez les concepts clés derrière les événements
+          </li>
+          <li class="flex items-center">
+            <svg
+              class="w-5 h-5 mr-2 text-purple-500"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"></path>
+            </svg>
+            Restez informé tout en développant votre culture générale
+          </li>
+        </ul>
+      </div>
+
+      <div class="lg:w-1/2">
+        <div
+          class="bg-gradient-to-br from-slate-100 to-slate-50 p-6 rounded-xl border border-gray-200 shadow-sm"
+        >
+          <div class="mb-4">
+            <div
+              class="text-lg font-bold text-slate-800 flex items-center gap-2 mb-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-purple-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <SmallTitle className="mb-0"> Nouvelle actualité </SmallTitle>
+            </div>
+            <Paragraph>
+              Trump accueille un «sommet» sur les cryptomonnaies à la Maison
+              Blanche ce vendredi
+            </Paragraph>
+          </div>
+
+          <div class="border-t border-gray-200 pt-4 mb-4">
+            <div class="font-semibold text-sm text-slate-600 mb-2">
+              Flashcards générées automatiquement :
+            </div>
+
+            <div class="space-y-3">
+              <QuestionCard className="flex flex-col items-start p-4">
+                <div class="text-sm font-medium text-slate-800 mb-1">
+                  Qu'est-ce que la cryptomonnaie ?
+                </div>
+                <div class="text-xs text-slate-500 italic">
+                  Cliquer pour voir la réponse
+                </div>
+              </QuestionCard>
+
+              <QuestionCard className="flex flex-col items-start p-4">
+                <div class="text-sm font-medium text-slate-800 mb-1">
+                  Quels sont les enjeux politiques des cryptomonnaies ?
+                </div>
+                <div class="text-xs text-slate-500 italic">
+                  Cliquer pour voir la réponse
+                </div>
+              </QuestionCard>
+
+              <QuestionCard className="flex flex-col items-start p-4">
+                <div class="text-sm font-medium text-slate-800 mb-1">
+                  Évolution de la position de Trump sur les cryptos
+                </div>
+                <div class="text-xs text-slate-500 italic">
+                  Cliquer pour voir la réponse
+                </div>
+              </QuestionCard>
+            </div>
+          </div>
+
+          <div class="flex space-x-2">
+            <button
+              class="text-xs px-3 py-1.5 bg-purple-100 text-purple-700 rounded-full font-medium hover:bg-purple-200 transition-colors"
+            >
+              Sauvegarder
+            </button>
+            <button
+              class="text-xs px-3 py-1.5 bg-blue-100 text-blue-700 rounded-full font-medium hover:bg-blue-200 transition-colors"
+            >
+              Enrichir
+            </button>
+            <button
+              class="text-xs px-3 py-1.5 bg-teal-100 text-teal-700 rounded-full font-medium hover:bg-teal-200 transition-colors"
+            >
+              Partager
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

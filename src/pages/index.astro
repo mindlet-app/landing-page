@@ -5,23 +5,16 @@ import Layout from "../layouts/Layout.astro";
 import LearningModes from "../components/LearningModes.astro";
 import Footer from "../components/Footer.astro";
 import Together from "../components/Together.astro";
-import Features from "../components/Features.astro";
-import TestClaude5 from "../components/TestClaude7.astro";
+import AIPresentation from "../components/AIPresentation.astro";
 ---
 
 <Layout>
   <Navbar />
   <Hero />
-  <!-- <main class="max-w-7xl mx-auto"> -->
-  <LearningModes />
-  <Together />
-  <!-- <Features /> -->
-  <!-- </main> -->
-  <!-- IA COLLECTION GENERATION SECTION -->
-
-  <TestClaude5 />
-
-  <!-- AI Capabilities Section -->
-
+  <main>
+    <LearningModes />
+    <Together />
+    <AIPresentation />
+  </main>
   <Footer />
 </Layout>
