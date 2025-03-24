@@ -36,7 +36,7 @@ Ce site a été développé avec [Astro](https://astro.build/), un framework web
 ## 📞 Contact
 
 - Site web : [mindlet.app](https://mindlet.app)
-- Email : contact@mindlet.app
+- Email : anthonymenghi@icloud.com
 - Téléphone : +33783267595
 
 ---

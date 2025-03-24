@@ -7,7 +7,7 @@ interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
 
 const Button: React.FC<ButtonProps> = ({
   variant = "primary",
-  className,
+  className, 
   children,
   ...props
 }) => {

@@ -1,0 +1,201 @@
+---
+import map from "../assets/map.png";
+import { Image } from "astro:assets";
+import Title from "./ui/Title";
+import {
+  Home,
+  Shield,
+  DollarSign,
+  Users,
+  CheckCircle,
+  Book,
+  Award,
+  Star,
+} from "lucide-react";
+import BigTitle from "./ui/BigTitle";
+import Paragraph from "./ui/Paragraph";
+---
+
+<section id="notre-vision" class="py-24 overflow-hidden relative">
+  <!-- Background elements -->
+
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="flex flex-col items-center mb-16">
+      <BigTitle> Notre vision de l'apprentissage de demain</BigTitle>
+      <Paragraph className="mb-8">
+        Mindlet n'est pas qu'un simple produit — c'est un engagement pour un
+        apprentissage accessible, éthique et transparent, conçu en Europe pour
+        le monde entier.
+      </Paragraph>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16">
+        <!-- Left Column -->
+        <div>
+          <div class="mb-12">
+            <div class="flex items-center mb-4">
+              <span class="inline-block p-2 rounded-full bg-blue-50 mr-4">
+                <Home className="h-6 w-6 text-blue-500" />
+              </span>
+              <Title> Une entreprise ancrée en Europe </Title>
+            </div>
+            <Paragraph>
+              Fondée en Corse par deux ingénieurs français diplômés, Mindlet est
+              fièrement européenne de sa conception à son infrastructure. Nous
+              développons une alternative aux géants technologiques
+              non-européens.
+            </Paragraph>
+            <div class="pl-16 inline-block">
+              <span
+                class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
+              >
+                <CheckCircle className="mr-1.5 h-3 w-3 text-blue-500" />
+                100% hébergé en Europe
+              </span>
+            </div>
+          </div>
+
+          <div class="mb-12">
+            <div class="flex items-center mb-4">
+              <span class="inline-block p-2 rounded-full bg-teal-50 mr-4">
+                <Shield className="h-6 w-6 text-teal-500" />
+              </span>
+              <Title> Sécurité et transparence </Title>
+            </div>
+            <Paragraph>
+              Nos services sont conçus dans le respect total du RGPD et des
+              règles européennes sur l'IA, avec une transparence complète sur
+              nos tarifs et l'utilisation des données. Nous utilisons des
+              technologies open source et opérons avec un modèle économique
+              clair, sans surprises.
+            </Paragraph>
+
+            <div class="pl-16 flex flex-wrap gap-2 mb-6">
+              <span
+                class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-teal-100 text-teal-800"
+              >
+                <CheckCircle className="mr-1.5 h-3 w-3 text-teal-500" />
+                Conforme RGPD
+              </span>
+              <span
+                class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-teal-100 text-teal-800"
+              >
+                <CheckCircle className="mr-1.5 h-3 w-3 text-teal-500" />
+                Technologies open source
+              </span>
+            </div>
+
+            <div class="pl-16 rounded-lg p-4 border border-gray-100 shadow-sm">
+              <div class="border-b border-gray-100 pb-3 mb-3">
+                <div class="flex justify-between items-center">
+                  <span class="text-sm font-medium text-slate-700"
+                    >Notre engagement envers vous</span
+                  >
+                  <span
+                    class="text-xs px-2 py-1 bg-teal-100 text-teal-800 rounded-full"
+                    >Garanti</span
+                  >
+                </div>
+              </div>
+
+              <div class="space-y-2 text-sm text-slate-600">
+                <div class="flex items-start">
+                  <CheckCircle
+                    className="h-5 w-5 text-teal-500 mr-2 mt-0.5 flex-shrink-0"
+                  />
+                  <p>Pas de frais cachés ou d'augmentations surprises</p>
+                </div>
+
+                <div class="flex items-start">
+                  <CheckCircle
+                    className="h-5 w-5 text-teal-500 mr-2 mt-0.5 flex-shrink-0"
+                  />
+                  <p>Explication claire de l'utilisation des données</p>
+                </div>
+
+                <div class="flex items-start">
+                  <CheckCircle
+                    className="h-5 w-5 text-teal-500 mr-2 mt-0.5 flex-shrink-0"
+                  />
+                  <p>Roadmap publiée et mise à jour régulièrement</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column with Image and Details -->
+        <div>
+          <div class="mb-12">
+            <div class="flex items-center mb-4">
+              <span class="inline-block p-2 rounded-full bg-yellow-50 mr-4">
+                <Award className="h-6 w-6 text-yellow-500" />
+              </span>
+              <h3 class="text-2xl font-semibold text-slate-800">
+                Qualité et vérification
+              </h3>
+            </div>
+            <p class="text-slate-600 mb-5 pl-16">
+              Nos contenus sont vérifiables et enrichis par la communauté. Un
+              système de badges indique la fiabilité des flashcards et permet
+              d'ajouter des références.
+            </p>
+
+            <!-- Badge System Example -->
+            <div class="pl-16 mb-5">
+              <div class="grid grid-cols-3 gap-3">
+                <div class="p-3 flex flex-col items-center text-center">
+                  <div
+                    class="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center mb-2"
+                  >
+                    <CheckCircle className="h-5 w-5 text-green-600" />
+                  </div>
+                  <p class="text-xs font-semibold text-slate-700">Vérifié</p>
+                  <p class="text-xs text-slate-500">Sources confirmées</p>
+                </div>
+
+                <div
+                  class="p-3 rounded-lg flex flex-col items-center text-center"
+                >
+                  <div
+                    class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mb-2"
+                  >
+                    <Book className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <p class="text-xs font-semibold text-slate-700">Académique</p>
+                  <p class="text-xs text-slate-500">Références scolaires</p>
+                </div>
+
+                <div
+                  class="p-3 rounded-lg flex flex-col items-center text-center"
+                >
+                  <div
+                    class="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center mb-2"
+                  >
+                    <Users className="h-5 w-5 text-purple-600" />
+                  </div>
+                  <p class="text-xs font-semibold text-slate-700">Communauté</p>
+                  <p class="text-xs text-slate-500">Enrichi collectivement</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mb-12">
+            <div class="flex items-center mb-4">
+              <span class="inline-block p-2 rounded-full bg-purple-50 mr-4">
+                <Users className="h-6 w-6 text-purple-500" />
+              </span>
+              <h3 class="text-2xl font-semibold text-slate-800">
+                Gouvernance communautaire
+              </h3>
+            </div>
+            <p class="text-slate-600 mb-5 pl-16">
+              Chaque mois, nous organisons un comité avec nos utilisateurs pour
+              échanger sur l'évolution de l'application. Votre voix compte dans
+              nos décisions et nos priorités de développement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

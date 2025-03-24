@@ -18,7 +18,7 @@ import { LucideMenu } from "lucide-react";
   <!-- Contenu de la navbar -->
   <div class="relative flex justify-between items-center w-full">
     <div class="flex items-center gap-x-2 md:gap-x-8">
-      <div class="flex items-center gap-x-2">
+      <a href="./" class="flex items-center gap-x-2">
         <Image
           class="rounded-full w-8 h-8 md:w-10 md:h-10"
           src="/images/logo.svg"
@@ -29,19 +29,40 @@ import { LucideMenu } from "lucide-react";
         <h1 class="text-lg md:text-xl font-bold font-saeada text-zinc-900">
           Mindlet
         </h1>
-      </div>
+      </a>
       <!-- Menu pour desktop -->
       <ul class="hidden md:flex gap-x-6">
         <li>
           <a
-            href="#modes-apprentissage"
+            href="./#modes-apprentissage"
             class="text-zinc-600 hover:text-emerald-500 transition-colors"
             >Modes d'apprentissage</a
           >
         </li>
         <li>
           <a
-            href="#contact"
+            href="./#presentation-ia"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors"
+            >Intelligence artificielle</a
+          >
+        </li>
+        <li>
+          <a
+            href="./#apprendre-ensemble"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors"
+            >Apprendre ensemble</a
+          >
+        </li>
+        <li>
+          <a
+            href="./#notre-vision"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors"
+            >Notre vision
+          </a>
+        </li>
+        <li>
+          <a
+            href="./#contact"
             class="text-zinc-600 hover:text-emerald-500 transition-colors"
             >Contact</a
           >
@@ -50,9 +71,11 @@ import { LucideMenu } from "lucide-react";
     </div>
 
     <div class="flex items-center gap-x-4">
-      <Button className="text-sm md:text-base px-3 py-1.5 md:px-4 md:py-2">
-        Commencer
-      </Button>
+      <a href="/commencer">
+        <Button className="text-sm md:text-base px-3 py-1.5 md:px-4 md:py-2">
+          Commencer
+        </Button>
+      </a>
 
       <!-- Bouton hamburger pour mobile -->
       <button
@@ -76,14 +99,35 @@ import { LucideMenu } from "lucide-react";
       <ul class="flex flex-col items-center gap-y-4">
         <li>
           <a
-            href="#modes-apprentissage"
+            href="./#modes-apprentissage"
             class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
             >Modes d'apprentissage</a
           >
         </li>
         <li>
           <a
-            href="#contact"
+            href="./#presentation-ia"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
+            >Intelligence artificielle</a
+          >
+        </li>
+        <li>
+          <a
+            href="./#apprendre-ensemble"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
+            >Apprendre ensemble</a
+          >
+        </li>
+        <li>
+          <a
+            href="./#notre-vision"
+            class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
+            >Notre vision</a
+          >
+        </li>
+        <li>
+          <a
+            href="./#contact"
             class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
             >Contact</a
           >

@@ -1,0 +1,129 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Layout from "../layouts/Layout.astro";
+import LearningModes from "../components/LearningModes.astro";
+import Footer from "../components/Footer.astro";
+import Together from "../components/Together.astro";
+import AIPresentation from "../components/AIPresentation.astro";
+import CompanyVision from "../components/CompanyVision.astro";
+import Title from "../components/ui/SmallTitle";
+import BigTitle from "../components/ui/BigTitle";
+---
+
+<Layout>
+  <Navbar />
+  <main>
+    <section class="bg-gray-50 py-20 px-4 md:px-8 max-w-7xl mx-auto">
+      <!-- En-tête de la section -->
+      <div class="text-center mb-16">
+        <BigTitle className="mt-8">
+          Notre projet est en cours de construction
+        </BigTitle>
+        <div class="w-full max-w-3xl mx-auto">
+          <div class="h-1 bg-emerald-500 w-32 md:w-48 mx-auto mt-8"></div>
+        </div>
+      </div>
+
+      <!-- Section d'inscription -->
+      <div class="mt-10 text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+          Soyez les premiers informés !
+        </h2>
+        <p class="text-gray-700 mb-8">
+          Inscrivez-vous à notre liste d'attente pour être notifiés dès le
+          lancement et bénéficier d'avantages exclusifs réservés aux premiers
+          utilisateurs.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+          <input
+            type="email"
+            placeholder="Votre adresse e-mail"
+            class="px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none min-w-0 flex-grow md:max-w-md"
+          />
+          <button
+            class="bg-emerald-500 text-white font-medium px-6 py-3 rounded-lg hover:bg-emerald-600 transition-colors"
+          >
+            Me tenir informé
+          </button>
+        </div>
+      </div>
+
+      <!-- Points de progression -->
+      <div class="mt-24 max-w-4xl mx-auto">
+        <h3 class="text-2xl font-semibold text-gray-900 text-center mb-10">
+          Notre progression
+        </h3>
+
+        <div class="relative">
+          <!-- Ligne de progression -->
+          <div class="absolute top-5 inset-x-0 h-1 bg-gray-200"></div>
+
+          <!-- Étapes -->
+          <div class="flex justify-between relative">
+            <!-- Étape 1 -->
+            <div class="relative z-10 text-center">
+              <div
+                class="w-10 h-10 bg-emerald-500 rounded-full mx-auto flex items-center justify-center"
+              >
+                <svg
+                  class="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <p class="mt-2 text-sm font-medium text-gray-700">Conception</p>
+            </div>
+
+            <!-- Étape 2 -->
+
+            <!-- Étape 3 (en cours) -->
+            <div class="relative z-10 text-center">
+              <div
+                class="w-10 h-10 bg-emerald-100 border-2 border-emerald-500 rounded-full mx-auto flex items-center justify-center"
+              >
+                <span class="bg-emerald-500 animate-pulse w-5 h-5 rounded-full"
+                ></span>
+              </div>
+              <p class="mt-2 text-sm font-medium text-emerald-600">
+                Développement
+              </p>
+            </div>
+
+            <!-- Étape 4 (à venir) -->
+            <div class="relative z-10 text-center">
+              <div
+                class="w-10 h-10 bg-gray-100 rounded-full mx-auto flex items-center justify-center"
+              >
+                <span class="text-gray-400 font-medium">3</span>
+              </div>
+              <p class="mt-2 text-sm font-medium text-gray-400">Test</p>
+            </div>
+            <div class="relative z-10 text-center">
+              <div
+                class="w-10 h-10 bg-gray-100 rounded-full mx-auto flex items-center justify-center"
+              >
+                <span class="text-gray-400 font-medium">4</span>
+              </div>
+              <p class="mt-2 text-sm font-medium text-gray-400">Lancement</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <p class="text-gray-700 italic">Lancement prévu : Mai-Juin 2024</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
