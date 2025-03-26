@@ -1,0 +1,95 @@
+/* Style général */
+body:not(#navbar *) {
+  line-height: 1.6;
+}
+
+/* Titres */
+h1:not(#navbar h1) {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+h2:not(#navbar h2) {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #222;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+h3:not(#navbar h3) {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Paragraphes */
+p:not(#navbar p) {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* Listes */
+ul:not(#navbar ul),
+ol:not(#navbar ol) {
+  margin-bottom: 20px;
+  padding-left: 25px;
+}
+
+li:not(#navbar li) {
+  margin-bottom: 8px;
+}
+
+/* Liens */
+a:not(#navbar a) {
+  color: #1fdb99;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:not(#navbar a):hover {
+  color: #06cb86;
+  text-decoration: underline;
+}
+
+/* Texte en gras */
+strong:not(#navbar strong) {
+  font-weight: 600;
+}
+
+/* Ajout d'espacement supplémentaire entre les sections principales */
+main:not(#navbar main) > h2:not(#navbar h2) {
+  margin-top: 60px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "LTSaeadaMedium";
+}
+
+/* Media queries pour responsivité */
+@media (max-width: 768px) {
+  h1:not(#navbar h1) {
+    font-size: 28px;
+  }
+
+  h2:not(#navbar h2) {
+    font-size: 24px;
+  }
+
+  h3:not(#navbar h3) {
+    font-size: 20px;
+  }
+}

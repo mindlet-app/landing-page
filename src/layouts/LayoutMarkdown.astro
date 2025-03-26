@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import "../styles/app.css";
 import { SEO } from "astro-seo";
+import "../styles/markdown.css";
 ---
 
 <!doctype html>
@@ -110,7 +111,9 @@ import { SEO } from "astro-seo";
   <body class="bg-neutral-50 font-raleway">
     <Navbar />
 
-    <slot />
+    <main class="lg:w-3/4 mx-auto my-8 pt-20 pb-8 px-4 md:px-8">
+      <slot />
+    </main>
   </body>
 </html>
 
