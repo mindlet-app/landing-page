@@ -16,11 +16,11 @@
   "related_applications": [],
   "screenshots": [
     {
-      "src": "/images/home-1080x1920.png",
+      "src": "/images/home-overview.png",
       "sizes": "1080x1920",
       "type": "image/png",
       "platform": "narrow",
-      "label": "Écran d'accueil de Mindlet"
+      "label": "Page d'accueil de Mindlet"
     }
   ],
   "icons": [
