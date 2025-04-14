@@ -1,46 +1,81 @@
 ---
-// Importations et logique côté serveur si nécessaire
+import Paragraph from "../ui/Paragraph";
+import Title from "../ui/Title";
 ---
 
 <div>
-  <h3 class="text-lg mb-4 font-saeada">Newsletter</h3>
+  <Title> Soyez les premiers informés ! </Title>
+  <Paragraph className="mb-6">
+    Inscrivez-vous à notre liste d'attente pour être notifiés dès le lancement et bénéficier d'avantages exclusifs
+    réservés aux premiers utilisateurs.
+  </Paragraph>
+  <!-- <h3 class="text-lg mb-4 font-saeada">Newsletter</h3>
   <p class="text-zinc-600 text-sm mb-3">
     Restez informés des dernières nouveautés et astuces pour optimiser votre
     apprentissage collaboratif.
-  </p>
-  <form id="newsletter-form" class="flex mt-2">
-    <input
-      type="email"
-      id="email-input"
-      placeholder="Votre email"
-      class="px-4 py-2 w-full border border-zinc-200 rounded-l-md focus:outline-none focus:ring-2 focus:ring-emerald-300"
-      required
-    />
+  </p> -->
+  <form method="post" id="newsletter-form" class="flex items-start gap-4 mt-2">
+    <div class="flex flex-col justify-start flex-1">
+      <input
+        type="email"
+        id="email-input"
+        name="email"
+        aria-label="Adresse email"
+        autocomplete="email"
+        placeholder="Votre adresse email"
+        class="px-4 py-2 w-full min-h-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+        required
+      />
+      <div class="flex mt-2">
+        <input
+          type="checkbox"
+          id="privacy-checkbox"
+          name="privacy-checkbox"
+          aria-label="J'accepte la politique de confidentialité"
+          class="cursor-pointer w-4 h-4 border-gray-300 rounded-lg text-white accent-emerald-400 focus:outline-none outline-none"
+          required
+        />
+        <label for="privacy-checkbox" class="text-sm text-zinc-600">
+          J'ai lu et j'accepte la{" "}
+          <a href="/politique-de-confidentialite" target="_blank" class="text-emerald-500 hover:underline">
+            politique de confidentialité
+          </a>{" "}
+          et je consens à recevoir des communications de Mindlet.
+        </label>
+      </div>
+    </div>
+
     <button
       type="submit"
-      class="bg-emerald-400 hover:bg-emerald-500 text-white px-4 py-2 rounded-r-md transition-colors"
+      class="px-4 py-2 min-h-12 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-lg transition-colors"
     >
-      S'abonner
+      Me tenir informé
     </button>
   </form>
   <div id="newsletter-message" class="mt-2 text-sm hidden"></div>
 </div>
 
 <script>
+  import { MINDLET_API_URL } from "astro:env/client";
+
   document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("newsletter-form");
-    const emailInput = document.getElementById("email-input");
-    const messageDiv = document.getElementById("newsletter-message");
+    const form = document.getElementById("newsletter-form") as HTMLFormElement;
+    const messageDiv = document.getElementById("newsletter-message") as HTMLDivElement;
 
     if (form) {
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        if (!emailInput) return;
-        const email = emailInput.value.trim();
+        const formData = new FormData(form);
 
+        const email = formData.get("email");
+        const privacyCheckbox = formData.get("privacy-checkbox");
         if (!email) {
           showMessage("Veuillez entrer une adresse email valide.", "error");
+          return;
+        }
+        if (!privacyCheckbox || privacyCheckbox !== "on") {
+          showMessage("Veuillez accepter la politique de confidentialité.", "error");
           return;
         }
 
@@ -48,16 +83,13 @@
         showMessage("Inscription en cours...", "loading");
 
         try {
-          const response = await fetch(
-            "http://127.0.0.1:8000/api/newsletters/subscribe",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email }),
-            }
-          );
+          const response = await fetch(`${MINDLET_API_URL}/newsletters/subscribe`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, privacy_policy_accepted: true }),
+          });
 
           const data = await response.json();
 
@@ -67,13 +99,10 @@
               "Merci de vous être abonné à la newsletter de Mindlet ! Vous recevrez nos dernières mises à jour et astuces directement dans votre boîte mail.",
               "success"
             );
-            if (emailInput) emailInput.value = "";
+            form.reset();
           } else {
             // Erreur côté serveur
-            showMessage(
-              data.message || "Une erreur est survenue. Veuillez réessayer.",
-              "error"
-            );
+            showMessage(data.message || "Une erreur est survenue. Veuillez réessayer.", "error");
           }
         } catch (error) {
           // Erreur de connexion
@@ -86,14 +115,9 @@
       });
     }
 
-    function showMessage(text, type) {
+    function showMessage(text: string, type: "success" | "error" | "loading") {
       messageDiv.textContent = text;
-      messageDiv.classList.remove(
-        "hidden",
-        "text-emerald-600",
-        "text-red-600",
-        "text-zinc-600"
-      );
+      messageDiv.classList.remove("hidden", "text-emerald-600", "text-red-600", "text-zinc-600");
 
       switch (type) {
         case "success":

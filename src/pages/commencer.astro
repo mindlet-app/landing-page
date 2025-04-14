@@ -1,14 +1,11 @@
 ---
-import Navbar from "../components/Navbar.astro";
-import Hero from "../components/Hero.astro";
-import Layout from "../layouts/Layout.astro";
-import LearningModes from "../components/LearningModes.astro";
 import Footer from "../components/Footer.astro";
-import Together from "../components/Together.astro";
-import AIPresentation from "../components/AIPresentation.astro";
-import CompanyVision from "../components/CompanyVision.astro";
-import Title from "../components/ui/SmallTitle";
 import BigTitle from "../components/ui/BigTitle";
+import Paragraph from "../components/ui/Paragraph";
+import Title from "../components/ui/Title";
+import SmallTitle from "../components/ui/SmallTitle";
+import Layout from "../layouts/Layout.astro";
+import Newsletter from "../components/footer/Newsletter.astro";
 ---
 
 <Layout>
@@ -20,20 +17,20 @@ import BigTitle from "../components/ui/BigTitle";
           Notre projet est en cours de construction
         </BigTitle>
         <div class="w-full max-w-3xl mx-auto">
-          <div class="h-1 bg-emerald-500 w-32 md:w-48 mx-auto mt-8"></div>
+          <div class="h-1 w-48 bg-emerald-500 mx-auto rounded-full"></div>
         </div>
       </div>
 
       <!-- Section d'inscription -->
       <div class="mt-10 text-center max-w-3xl mx-auto">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">
-          Soyez les premiers informés !
-        </h2>
-        <p class="text-gray-700 mb-8">
+        <Newsletter />
+      </div>
+      <!--   <Title> Soyez les premiers informés ! </Title>
+        <Paragraph className="mb-6">
           Inscrivez-vous à notre liste d'attente pour être notifiés dès le
           lancement et bénéficier d'avantages exclusifs réservés aux premiers
           utilisateurs.
-        </p>
+        </Paragraph>
 
         <div class="flex flex-col md:flex-row gap-4 justify-center">
           <input
@@ -46,14 +43,11 @@ import BigTitle from "../components/ui/BigTitle";
           >
             Me tenir informé
           </button>
-        </div>
-      </div>
+        </div>-->
 
       <!-- Points de progression -->
       <div class="mt-24 max-w-4xl mx-auto">
-        <h3 class="text-2xl font-semibold text-gray-900 text-center mb-10">
-          Notre progression
-        </h3>
+        <SmallTitle className="text-center"> Notre progression </SmallTitle>
 
         <div class="relative">
           <!-- Ligne de progression -->
