@@ -11,7 +11,11 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   env: {
     schema: {
-      MINDLET_API_URL: envField.string({ context: "client", access: "public", default: "https://api.mindlet.app" }),
+      MINDLET_API_URL: envField.string({
+        context: "client",
+        access: "public",
+        default: "http://localhost:3000",
+      }),
     },
   },
   vite: {

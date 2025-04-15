@@ -3,6 +3,16 @@ body:not(#navbar *) {
   line-height: 1.6;
 }
 
+main a {
+  color: #1fdb99;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+main a:hover {
+  color: #06cb86;
+  text-decoration: underline;
+}
+
 /* Titres */
 h1:not(#navbar h1) {
   font-size: 36px;
@@ -46,18 +56,6 @@ ol:not(#navbar ol) {
 
 li:not(#navbar li) {
   margin-bottom: 8px;
-}
-
-/* Liens */
-a:not(#navbar a) {
-  color: #1fdb99;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-a:not(#navbar a):hover {
-  color: #06cb86;
-  text-decoration: underline;
 }
 
 /* Texte en gras */
