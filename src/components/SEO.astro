@@ -56,6 +56,10 @@ import { SEO as AstroSEO } from "astro-seo";
       { rel: "manifest", href: "/manifest.json" },
     ],
     meta: [
+      {
+        name: "title",
+        content: "Mindlet - L'apprentissage collaboratif, assisté par l'IA",
+      },
       { name: "theme-color", content: "#1fdb99" },
       { name: "application-name", content: "Mindlet" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
@@ -76,6 +80,18 @@ import { SEO as AstroSEO } from "astro-seo";
 
       // Métadonnées supplémentaires pour les réseaux sociaux
       { property: "og:site_name", content: "Mindlet" },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: "Mindlet - Apprentissage collaboratif" },
+      {
+        property: "og:description",
+        content:
+          "Première plateforme sociale d'apprentissage collaboratif assisté par IA. Créez, partagez et apprenez avec des flashcards, quiz et exercices d'association dans un environnement social européen.",
+      },
+      {
+        property: "og:image",
+        content: "https://mindlet.app/images/hero-image.png",
+      },
+      { property: "og:url", content: "https://mindlet.app/" },
       { property: "og:locale", content: "fr_FR" },
 
       // Métadonnées pour la recherche mobile
