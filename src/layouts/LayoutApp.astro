@@ -1,0 +1,96 @@
+---
+import "../styles/app.css";
+import {
+  LucidePanelLeftClose,
+  LucidePanelLeftOpen,
+  LucidePanelRightClose,
+} from "lucide-react";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body>
+    <div class="drawer md:drawer-open" id="drawer-container">
+      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content">
+        <main class="mt-4 mr-4 p-4 text-neutral bg-amber-500 rounded-md">
+          <label
+            for="my-drawer"
+            id="drawer-open"
+            class="absolute top-4 left-4 md:hidden cursor-pointer"
+          >
+            <LucidePanelLeftOpen className="m-2" />
+          </label>
+          <slot />
+        </main>
+      </div>
+      <div class="drawer-side box-content rounded-md my-[2vh] mx-2 h-[96vh]">
+        <label
+          for="my-drawer"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+          style="opacity: 0;"
+          id="drawer-overlay"></label>
+        <ul
+          class="menu bg-primary rounded-md text-mindlet-white min-h-full w-40 p-4"
+        >
+          <label for="my-drawer" id="drawer-close" class="cursor-pointer pb-4">
+            <LucidePanelLeftClose className="m-2" />
+          </label>
+          <li><a><p>icon</p> Profil</a></li>
+          <li><a>Sidebar Item 2</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  const myDrawer = document.getElementById("my-drawer") as HTMLInputElement;
+  const drawerContainer = document.getElementById(
+    "drawer-container"
+  ) as HTMLDivElement;
+  const drawerClose = document.getElementById(
+    "drawer-close"
+  ) as HTMLLabelElement;
+  const drawerOpen = document.getElementById("drawer-open") as HTMLLabelElement;
+  const drawerOverlay = document.getElementById(
+    "drawer-overlay"
+  ) as HTMLLabelElement;
+
+  if (myDrawer && drawerClose && drawerOpen && myDrawer && drawerOverlay) {
+    drawerClose.addEventListener("click", () => {
+      myDrawer.checked = true;
+      drawerContainer?.classList.remove("md:drawer-open");
+      drawerOpen?.classList.remove("md:hidden");
+      drawerOpen?.classList.remove("hidden");
+    });
+    drawerOpen.addEventListener("click", () => {
+      myDrawer.checked = false;
+      drawerContainer?.classList.add("md:drawer-open");
+      drawerOpen?.classList.add("hidden");
+    });
+    drawerOverlay.addEventListener("click", () => {
+      myDrawer.checked = true;
+      drawerContainer?.classList.remove("md:drawer-open");
+      drawerOpen?.classList.remove("md:hidden");
+      drawerOpen?.classList.remove("hidden");
+    });
+  }
+</script>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

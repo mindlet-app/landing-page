@@ -41,5 +41,8 @@ Ce site a été développé avec [Astro](https://astro.build/), un framework web
 
 ---
 
+https://daisyui.com/docs/editor/
+
+---
 © 2025 Mindlet. Tous droits réservés.
 L'apprentissage collaboratif, réinventé par l'IA.

@@ -1,4 +1,47 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: mindlet-theme --default
+  root: ":root";
+  include: ;
+  exclude: ;
+  prefix: ;
+  logs: true;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: oklch(98% 0.002 247.839);
+  --color-base-200: oklch(96% 0.003 264.542);
+  --color-base-300: oklch(92% 0.006 264.531);
+  --color-base-content: oklch(21% 0.034 264.665);
+  --color-primary: oklch(0.79 0.1681 162.07);
+  --color-primary-content: oklch(0.98 0.0113 176.32);
+  --color-secondary: oklch(0.6 0.2047 301.15);
+  --color-secondary-content: oklch(0.94 0.0168 304.8);
+  --color-accent: oklch(0.14 0.0592 301.76);
+  --color-accent-content: oklch(0.98 0.0113 176.32);
+  --color-neutral: oklch(0.19 0.0358 168.3);
+  --color-neutral-content: oklch(0.98 0.0113 176.32);
+  --color-info: oklch(0.77 0.096 250.98);
+  --color-info-content: oklch(0.14 0.0592 301.76);
+  --color-success: oklch(0.79 0.1681 162.07);
+  --color-success-content: oklch(0.14 0.0592 301.76);
+  --color-warning: oklch(0.65 0.1628 48.52);
+  --color-warning-content: oklch(0.98 0.0113 176.32);
+  --color-error: oklch(0.57 0.2186 27.81);
+  --color-error-content: oklch(0.98 0.0113 176.32);
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
 
 @font-face {
   font-family: "LTSaeadaMedium";
