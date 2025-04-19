@@ -3,7 +3,12 @@ import "../styles/app.css";
 import {
   LucidePanelLeftClose,
   LucidePanelLeftOpen,
-  LucidePanelRightClose,
+  LucideHome,
+  LucideUser,
+  LucideSettings,
+  LucideBarChart3,
+  LucideHelpCircle,
+  LucideLogOut,
 } from "lucide-react";
 ---
 
@@ -16,74 +21,310 @@ import {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body>
-    <div class="drawer md:drawer-open" id="drawer-container">
+  <body class="bg-slate-50 dark:bg-slate-900">
+    <div class="drawer lg:drawer-open" id="drawer-container">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content">
-        <main class="mt-4 mr-4 p-4 text-neutral bg-amber-500 rounded-md">
-          <label
-            for="my-drawer"
-            id="drawer-open"
-            class="absolute top-4 left-4 md:hidden cursor-pointer"
+      <div class="drawer-content transition-all duration-300 ease-in-out">
+        <main class="min-h-screen p-6 md:p-8 lg:p-10">
+          <!-- Mobile toggle button (only visible on mobile) -->
+          <button
+            id="drawer-open-btn"
+            class="fixed top-4 left-4 z-20 flex h-10 w-10 items-center justify-center rounded-md bg-white shadow-md cursor-pointer hover:bg-gray-50 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all lg:hidden"
+            aria-label="Open sidebar"
           >
-            <LucidePanelLeftOpen className="m-2" />
-          </label>
-          <slot />
+            <LucidePanelLeftOpen
+              className="h-5 w-5 text-slate-700 dark:text-slate-200"
+            />
+          </button>
+
+          <!-- Desktop toggle button (only visible on desktop when sidebar is closed) -->
+          <button
+            id="desktop-sidebar-open-btn"
+            class="fixed top-4 left-4 z-20 hidden h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-50 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all"
+            aria-label="Open sidebar"
+          >
+            <LucidePanelLeftOpen
+              className="h-5 w-5 text-slate-700 dark:text-slate-200"
+            />
+          </button>
+
+          <div
+            class="min-h-[calc(100vh-8rem)] p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm"
+          >
+            <slot />
+          </div>
         </main>
       </div>
-      <div class="drawer-side box-content rounded-md my-[2vh] mx-2 h-[96vh]">
+      <div class="drawer-side z-30">
         <label
           for="my-drawer"
           aria-label="close sidebar"
-          class="drawer-overlay"
-          style="opacity: 0;"
-          id="drawer-overlay"></label>
-        <ul
-          class="menu bg-primary rounded-md text-mindlet-white min-h-full w-40 p-4"
+          class="drawer-overlay bg-black/40 transition-opacity duration-300"
+          id="drawer-overlay"
         >
-          <label for="my-drawer" id="drawer-close" class="cursor-pointer pb-4">
-            <LucidePanelLeftClose className="m-2" />
-          </label>
-          <li><a><p>icon</p> Profil</a></li>
-          <li><a>Sidebar Item 2</a></li>
-        </ul>
+        </label>
+        <div class="sidebar-container h-full w-64 p-0 relative">
+          <div
+            class="sidebar-content bg-white dark:bg-slate-800 h-full shadow-xl"
+          >
+            <div class="flex flex-col h-full">
+              <!-- Header -->
+              <div
+                class="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between"
+              >
+                <div class="flex items-center space-x-3">
+                  <div
+                    class="w-8 h-8 rounded-md bg-blue-600 flex items-center justify-center"
+                  >
+                    <span class="text-white font-bold">E</span>
+                  </div>
+                  <h1
+                    class="text-lg font-semibold text-slate-900 dark:text-white"
+                  >
+                    Enterprise
+                  </h1>
+                </div>
+                <!-- Toggle button to close sidebar -->
+                <button
+                  id="sidebar-close-btn"
+                  class="cursor-pointer w-8 h-8 flex items-center justify-center rounded-md hover:bg-slate-100 dark:hover:bg-slate-700"
+                >
+                  <LucidePanelLeftClose
+                    className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                  />
+                </button>
+              </div>
+
+              <!-- Navigation -->
+              <nav class="flex-1 overflow-y-auto p-4">
+                <ul class="space-y-1">
+                  <li>
+                    <a
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                    >
+                      <LucideHome
+                        className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                      />
+                      Tableau de bord
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 bg-slate-100 dark:text-white dark:bg-slate-700/50 transition-colors"
+                    >
+                      <LucideUser
+                        className="h-5 w-5 text-blue-600 dark:text-blue-400"
+                      />
+                      Profil utilisateur
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                    >
+                      <LucideBarChart3
+                        className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                      />
+                      Statistiques
+                    </a>
+                  </li>
+
+                  <li class="pt-4">
+                    <div
+                      class="px-3 pb-1 text-xs font-medium text-slate-500 dark:text-slate-400"
+                    >
+                      Paramètres
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                    >
+                      <LucideSettings
+                        className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                      />
+                      Configuration
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                    >
+                      <LucideHelpCircle
+                        className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                      />
+                      Aide & Support
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+
+              <!-- Footer -->
+              <div class="p-4 border-t border-slate-200 dark:border-slate-700">
+                <a
+                  class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                >
+                  <LucideLogOut
+                    className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                  />
+                  Déconnexion
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
 </html>
 
 <script>
-  const myDrawer = document.getElementById("my-drawer") as HTMLInputElement;
-  const drawerContainer = document.getElementById(
-    "drawer-container"
-  ) as HTMLDivElement;
-  const drawerClose = document.getElementById(
-    "drawer-close"
-  ) as HTMLLabelElement;
-  const drawerOpen = document.getElementById("drawer-open") as HTMLLabelElement;
-  const drawerOverlay = document.getElementById(
-    "drawer-overlay"
-  ) as HTMLLabelElement;
+  document.addEventListener("DOMContentLoaded", () => {
+    const myDrawer = document.getElementById("my-drawer") as HTMLInputElement;
+    const drawerContainer = document.getElementById(
+      "drawer-container"
+    ) as HTMLDivElement;
+    const sidebarCloseBtn = document.getElementById(
+      "sidebar-close-btn"
+    ) as HTMLButtonElement;
+    const drawerOpenBtn = document.getElementById(
+      "drawer-open-btn"
+    ) as HTMLButtonElement;
+    const desktopSidebarOpenBtn = document.getElementById(
+      "desktop-sidebar-open-btn"
+    ) as HTMLButtonElement;
+    const drawerOverlay = document.getElementById(
+      "drawer-overlay"
+    ) as HTMLLabelElement;
 
-  if (myDrawer && drawerClose && drawerOpen && myDrawer && drawerOverlay) {
-    drawerClose.addEventListener("click", () => {
-      myDrawer.checked = true;
-      drawerContainer?.classList.remove("md:drawer-open");
-      drawerOpen?.classList.remove("md:hidden");
-      drawerOpen?.classList.remove("hidden");
-    });
-    drawerOpen.addEventListener("click", () => {
+    // State tracking
+    let isDesktopSidebarOpen = true;
+
+    // Mobile detection
+    const isMobile = () => window.innerWidth < 1024;
+    const isDesktop = () => window.innerWidth >= 1024;
+
+    // Function to open the sidebar
+    const openSidebar = () => {
       myDrawer.checked = false;
-      drawerContainer?.classList.add("md:drawer-open");
-      drawerOpen?.classList.add("hidden");
-    });
-    drawerOverlay.addEventListener("click", () => {
+
+      if (isMobile()) {
+        drawerContainer.classList.add("drawer-open");
+      } else {
+        // Desktop specific
+        drawerContainer.classList.add("lg:drawer-open");
+        isDesktopSidebarOpen = true;
+        updateDesktopToggleVisibility();
+      }
+    };
+
+    // Function to close the sidebar
+    const closeSidebar = () => {
       myDrawer.checked = true;
-      drawerContainer?.classList.remove("md:drawer-open");
-      drawerOpen?.classList.remove("md:hidden");
-      drawerOpen?.classList.remove("hidden");
-    });
-  }
+
+      if (isMobile()) {
+        drawerContainer.classList.remove("drawer-open");
+      } else {
+        // Desktop specific
+        drawerContainer.classList.remove("lg:drawer-open");
+        isDesktopSidebarOpen = false;
+        updateDesktopToggleVisibility();
+      }
+    };
+
+    // Toggle sidebar state
+    const toggleSidebar = () => {
+      if (myDrawer.checked) {
+        openSidebar();
+      } else {
+        closeSidebar();
+      }
+    };
+
+    // Update desktop open button visibility
+    const updateDesktopToggleVisibility = () => {
+      if (desktopSidebarOpenBtn) {
+        if (isDesktop() && !isDesktopSidebarOpen) {
+          // Show desktop open button only when sidebar is closed on desktop
+          desktopSidebarOpenBtn.classList.remove("hidden");
+          desktopSidebarOpenBtn.classList.add("flex");
+        } else {
+          // Hide the button in all other cases
+          desktopSidebarOpenBtn.classList.remove("flex");
+          desktopSidebarOpenBtn.classList.add("hidden");
+        }
+      }
+    };
+
+    // Handles resize events to properly manage sidebar state
+    const handleResize = () => {
+      if (isDesktop()) {
+        // Set initial desktop state
+        if (isDesktopSidebarOpen) {
+          drawerContainer.classList.add("lg:drawer-open");
+        } else {
+          drawerContainer.classList.remove("lg:drawer-open");
+        }
+      } else {
+        // On mobile, ensure drawer is closed by default
+        closeSidebar();
+      }
+
+      // Update toggle visibility
+      updateDesktopToggleVisibility();
+    };
+
+    // Initialize and add event listeners
+    if (
+      myDrawer &&
+      sidebarCloseBtn &&
+      drawerOpenBtn &&
+      desktopSidebarOpenBtn &&
+      drawerOverlay &&
+      drawerContainer
+    ) {
+      // Close button event
+      sidebarCloseBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeSidebar();
+      });
+
+      // Open button event (mobile only)
+      drawerOpenBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openSidebar();
+      });
+
+      // Desktop open button event
+      desktopSidebarOpenBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        openSidebar();
+      });
+
+      // Overlay event - handles clicking outside the sidebar to close it
+      drawerOverlay.addEventListener("click", () => {
+        closeSidebar();
+      });
+
+      // Handle window resize events
+      window.addEventListener("resize", handleResize);
+
+      // Initial setup
+      handleResize();
+
+      // Debug logs
+      console.log("Sidebar initialization complete");
+    } else {
+      console.error("Some elements could not be found:", {
+        myDrawer: !!myDrawer,
+        drawerContainer: !!drawerContainer,
+        sidebarCloseBtn: !!sidebarCloseBtn,
+        drawerOpenBtn: !!drawerOpenBtn,
+        desktopSidebarOpenBtn: !!desktopSidebarOpenBtn,
+        drawerOverlay: !!drawerOverlay,
+      });
+    }
+  });
 </script>
 
 <style>
@@ -92,5 +333,90 @@ import {
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+
+  /* Sidebar animation styles */
+  .drawer-side {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .drawer-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    visibility: hidden;
+  }
+
+  .drawer-toggle:not(:checked) ~ .drawer-side {
+    transform: translateX(0);
+  }
+
+  .drawer-toggle:not(:checked) ~ .drawer-side .drawer-overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile specific styles - make sidebar overlay */
+  @media (max-width: 1023px) {
+    .drawer-side {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 30;
+    }
+
+    .sidebar-container {
+      width: 16rem;
+      max-width: 80vw;
+    }
+
+    .sidebar-content {
+      height: 100vh;
+      border-radius: 0 8px 8px 0;
+    }
+  }
+
+  /* Desktop specific styles */
+  @media (min-width: 1024px) {
+    /* Important fix for desktop mode */
+    .drawer-side {
+      transform: none !important;
+      position: relative;
+      z-index: 0;
+    }
+
+    .drawer-toggle:checked ~ .drawer-side {
+      display: none;
+    }
+
+    .drawer-toggle:not(:checked) ~ .drawer-side {
+      display: block;
+    }
+
+    .lg:drawer-open .drawer-content {
+      padding-left: 16rem;
+    }
+
+    .drawer-toggle:checked ~ .drawer-content {
+      padding-left: 0;
+    }
+
+    .sidebar-content {
+      border-radius: 8px;
+      height: calc(100vh - 2rem);
+      margin: 1rem 0 1rem 1rem;
+    }
+
+    /* Desktop toggle button styling */
+    #desktop-sidebar-open-btn {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      transition: all 0.2s ease-in-out;
+    }
+
+    #desktop-sidebar-open-btn:hover {
+      transform: scale(1.05);
+    }
   }
 </style>
