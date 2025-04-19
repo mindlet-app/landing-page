@@ -1,9 +1,9 @@
 ---
 import "../styles/app.css";
-import "../components/app/layout/sidebar.css";
-import Sidebar from "../components/app/layout/Sidebar.astro";
+import "@components/app/layout/sidebar.css";
+import Sidebar from "@components/app/layout/Sidebar.astro";
 import { LucidePanelLeftOpen } from "lucide-react";
-import ToggleButton from "../components/app/layout/ToggleButton.astro";
+import ToggleButton from "@components/app/layout/ToggleButton.astro";
 ---
 
 <!doctype html>
@@ -50,6 +50,6 @@ import ToggleButton from "../components/app/layout/ToggleButton.astro";
       <Sidebar />
     </div>
 
-    <script src="../components//app/layout/sidebar.js"></script>
+    <script src="@components//app/layout/sidebar.js"></script>
   </body>
 </html>
