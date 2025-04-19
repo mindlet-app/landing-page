@@ -21,7 +21,7 @@ import {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
   </head>
-  <body class="bg-slate-50 dark:bg-slate-900">
+  <body class="bg-slate-50">
     <div class="drawer lg:drawer-open" id="drawer-container">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content transition-all duration-300 ease-in-out">
@@ -29,27 +29,27 @@ import {
           <!-- Mobile toggle button (only visible on mobile) -->
           <button
             id="drawer-open-btn"
-            class="fixed top-4 left-4 z-20 flex h-10 w-10 items-center justify-center rounded-md bg-white shadow-md cursor-pointer hover:bg-gray-50 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all lg:hidden"
+            class="fixed top-4 left-4 z-20 flex h-10 w-10 items-center justify-center rounded-md bg-white shadow-md cursor-pointer hover:bg-gray-50 transition-all lg:hidden"
             aria-label="Open sidebar"
           >
             <LucidePanelLeftOpen
-              className="h-5 w-5 text-slate-700 dark:text-slate-200"
+              className="h-5 w-5 text-slate-700"
             />
           </button>
 
           <!-- Desktop toggle button (only visible on desktop when sidebar is closed) -->
           <button
             id="desktop-sidebar-open-btn"
-            class="fixed top-4 left-4 z-20 hidden h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-50 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all"
+            class="fixed top-4 left-4 z-20 hidden h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg cursor-pointer hover:bg-gray-50 transition-all"
             aria-label="Open sidebar"
           >
             <LucidePanelLeftOpen
-              className="h-5 w-5 text-slate-700 dark:text-slate-200"
+              className="h-5 w-5 text-slate-700"
             />
           </button>
 
           <div
-            class="min-h-[calc(100vh-8rem)] p-6 bg-white dark:bg-slate-800 rounded-xl shadow-sm"
+            class="min-h-[calc(100vh-8rem)] p-6 bg-white  rounded-xl shadow-sm"
           >
             <slot />
           </div>
@@ -65,12 +65,12 @@ import {
         </label>
         <div class="sidebar-container h-full w-64 p-0 relative">
           <div
-            class="sidebar-content bg-white dark:bg-slate-800 h-full shadow-xl"
+            class="sidebar-content bg-white  h-full shadow-xl"
           >
             <div class="flex flex-col h-full">
               <!-- Header -->
               <div
-                class="p-4 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between"
+                class="p-4 border-b border-slate-200  flex items-center justify-between"
               >
                 <div class="flex items-center space-x-3">
                   <div
@@ -79,7 +79,7 @@ import {
                     <span class="text-white font-bold">E</span>
                   </div>
                   <h1
-                    class="text-lg font-semibold text-slate-900 dark:text-white"
+                    class="text-lg font-semibold text-slate-900 "
                   >
                     Enterprise
                   </h1>
@@ -87,10 +87,10 @@ import {
                 <!-- Toggle button to close sidebar -->
                 <button
                   id="sidebar-close-btn"
-                  class="cursor-pointer w-8 h-8 flex items-center justify-center rounded-md hover:bg-slate-100 dark:hover:bg-slate-700"
+                  class="cursor-pointer w-8 h-8 flex items-center justify-center rounded-md hover:bg-slate-100"
                 >
                   <LucidePanelLeftClose
-                    className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                    className="h-5 w-5 text-slate-500"
                   />
                 </button>
               </div>
@@ -100,30 +100,30 @@ import {
                 <ul class="space-y-1">
                   <li>
                     <a
-                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors"
                     >
                       <LucideHome
-                        className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                        className="h-5 w-5 text-slate-500"
                       />
                       Tableau de bord
                     </a>
                   </li>
                   <li>
                     <a
-                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 bg-slate-100 dark:text-white dark:bg-slate-700/50 transition-colors"
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 bg-slate-100 transition-colors"
                     >
                       <LucideUser
-                        className="h-5 w-5 text-blue-600 dark:text-blue-400"
+                        className="h-5 w-5 text-blue-600 "
                       />
                       Profil utilisateur
                     </a>
                   </li>
                   <li>
                     <a
-                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors"
                     >
                       <LucideBarChart3
-                        className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                        className="h-5 w-5 text-slate-500 "
                       />
                       Statistiques
                     </a>
@@ -131,27 +131,27 @@ import {
 
                   <li class="pt-4">
                     <div
-                      class="px-3 pb-1 text-xs font-medium text-slate-500 dark:text-slate-400"
+                      class="px-3 pb-1 text-xs font-medium text-slate-500 "
                     >
                       Paramètres
                     </div>
                   </li>
                   <li>
                     <a
-                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100  transition-colors"
                     >
                       <LucideSettings
-                        className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                        className="h-5 w-5 text-slate-500 "
                       />
                       Configuration
                     </a>
                   </li>
                   <li>
                     <a
-                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                      class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100  transition-colors"
                     >
                       <LucideHelpCircle
-                        className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                        className="h-5 w-5 text-slate-500"
                       />
                       Aide & Support
                     </a>
@@ -160,12 +160,12 @@ import {
               </nav>
 
               <!-- Footer -->
-              <div class="p-4 border-t border-slate-200 dark:border-slate-700">
+              <div class="p-4 border-t border-slate-200">
                 <a
-                  class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-700/50 transition-colors"
+                  class="flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100  transition-colors"
                 >
                   <LucideLogOut
-                    className="h-5 w-5 text-slate-500 dark:text-slate-400"
+                    className="h-5 w-5 text-slate-500"
                   />
                   Déconnexion
                 </a>
