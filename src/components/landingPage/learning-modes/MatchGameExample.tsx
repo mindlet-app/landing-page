@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { AnswerCard } from "../ui/Card";
-import Button from "../ui/Button";
+import { AnswerCard } from "../../ui/Card";
+import Button from "../../ui/Button";
 import { LucideRefreshCw } from "lucide-react";
-import Paragraph from "../ui/Paragraph";
+import Paragraph from "../../ui/Paragraph";
 
 interface MatchPair {
   id: number;

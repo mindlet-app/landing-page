@@ -1,13 +1,13 @@
 ---
-import Paragraph from "../ui/Paragraph";
-import Title from "../ui/Title";
+import Paragraph from "../../ui/Paragraph";
+import Title from "../../ui/Title";
 ---
 
 <div>
   <Title> Soyez les premiers informés ! </Title>
   <Paragraph className="mb-6">
-    Inscrivez-vous à notre liste d'attente pour être notifiés dès le lancement et bénéficier d'avantages exclusifs
-    réservés aux premiers utilisateurs.
+    Inscrivez-vous à notre liste d'attente pour être notifiés dès le lancement
+    et bénéficier d'avantages exclusifs réservés aux premiers utilisateurs.
   </Paragraph>
   <!-- <h3 class="text-lg mb-4 font-saeada">Newsletter</h3>
   <p class="text-zinc-600 text-sm mb-3">
@@ -37,7 +37,11 @@ import Title from "../ui/Title";
         />
         <label for="privacy-checkbox" class="text-sm text-zinc-600">
           J'ai lu et j'accepte la{" "}
-          <a href="/politique-de-confidentialite" target="_blank" class="text-emerald-500 hover:underline">
+          <a
+            href="/politique-de-confidentialite"
+            target="_blank"
+            class="text-emerald-500 hover:underline"
+          >
             politique de confidentialité
           </a>{" "}
           et je consens à recevoir des communications de Mindlet.
@@ -60,7 +64,9 @@ import Title from "../ui/Title";
 
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("newsletter-form") as HTMLFormElement;
-    const messageDiv = document.getElementById("newsletter-message") as HTMLDivElement;
+    const messageDiv = document.getElementById(
+      "newsletter-message"
+    ) as HTMLDivElement;
 
     if (form) {
       form.addEventListener("submit", async (e) => {
@@ -75,7 +81,10 @@ import Title from "../ui/Title";
           return;
         }
         if (!privacyCheckbox || privacyCheckbox !== "on") {
-          showMessage("Veuillez accepter la politique de confidentialité.", "error");
+          showMessage(
+            "Veuillez accepter la politique de confidentialité.",
+            "error"
+          );
           return;
         }
 
@@ -83,13 +92,16 @@ import Title from "../ui/Title";
         showMessage("Inscription en cours...", "loading");
 
         try {
-          const response = await fetch(`${MINDLET_API_URL}/newsletters/subscribe`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email, privacy_policy_accepted: true }),
-          });
+          const response = await fetch(
+            `${MINDLET_API_URL}/newsletters/subscribe`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, privacy_policy_accepted: true }),
+            }
+          );
 
           const data = await response.json();
 
@@ -102,7 +114,10 @@ import Title from "../ui/Title";
             form.reset();
           } else {
             // Erreur côté serveur
-            showMessage(data.message || "Une erreur est survenue. Veuillez réessayer.", "error");
+            showMessage(
+              data.message || "Une erreur est survenue. Veuillez réessayer.",
+              "error"
+            );
           }
         } catch (error) {
           // Erreur de connexion
@@ -117,7 +132,12 @@ import Title from "../ui/Title";
 
     function showMessage(text: string, type: "success" | "error" | "loading") {
       messageDiv.textContent = text;
-      messageDiv.classList.remove("hidden", "text-emerald-600", "text-red-600", "text-zinc-600");
+      messageDiv.classList.remove(
+        "hidden",
+        "text-emerald-600",
+        "text-red-600",
+        "text-zinc-600"
+      );
 
       switch (type) {
         case "success":

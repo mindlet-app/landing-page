@@ -1,21 +1,21 @@
 ---
-import Navbar from "../components/Navbar.astro";
-import Hero from "../components/Hero.astro";
+import Hero from "../components/landingPage/Hero.astro";
 import Layout from "../layouts/Layout.astro";
-import LearningModes from "../components/LearningModes.astro";
-import Footer from "../components/Footer.astro";
-import Together from "../components/Together.astro";
-import AIPresentation from "../components/AIPresentation.astro";
-import CompanyVision from "../components/CompanyVision.astro";
+import LearningModes from "../components/landingPage/LearningModes.astro";
+import Footer from "../components/landingPage/Footer.astro";
+import Together from "../components/landingPage/Together.astro";
+import AIPresentation from "../components/landingPage/AIPresentation.astro";
+import CompanyVision from "../components/landingPage/CompanyVision.astro";
 ---
 
 <Layout>
-  <Hero />
-  <main>
-    <LearningModes />
-    <AIPresentation />
-    <Together />
-    <CompanyVision />
-  </main>
-  <Footer />
+  <Hero landingPage>
+    <main>
+      <LearningModes />
+      <AIPresentation />
+      <Together />
+      <CompanyVision />
+    </main>
+    <Footer />
+  </Hero>
 </Layout>

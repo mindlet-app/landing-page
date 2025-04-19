@@ -1,8 +1,8 @@
 import { CheckIcon, LucideRefreshCw } from "lucide-react";
 import React, { useState } from "react";
-import Button from "../ui/Button";
-import { AnswerCard, QuestionCard } from "../ui/Card";
-import Paragraph from "../ui/Paragraph";
+import Button from "../../ui/Button";
+import { AnswerCard, QuestionCard } from "../../ui/Card";
+import Paragraph from "../../ui/Paragraph";
 
 interface Answer {
   text: string;
