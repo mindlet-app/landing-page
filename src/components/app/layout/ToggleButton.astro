@@ -1,0 +1,11 @@
+---
+const { id, ariaLabel, className } = Astro.props;
+---
+
+<button
+  id={id}
+  class={className}
+  aria-label={ariaLabel}
+>
+  <slot />
+</button>
