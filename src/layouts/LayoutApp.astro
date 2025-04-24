@@ -99,7 +99,7 @@ import {
           id="sidebar"
         >
           <ul class="menu p-4">
-            <li class="h-10 ">
+            <li class="h-10">
               <a
                 class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
               >
@@ -174,13 +174,24 @@ import {
   /* Ajout des styles pour corriger le hover */
   #sidebar.collapsed li a {
     justify-content: center;
+    animation: gap0 0.3s ease forwards;
+  }
 
+  @keyframes gap0 {
+    0% {
+      gap: 1rem;
+    }
+    100% {
+      gap: 0rem;
+    }
   }
 
   #sidebar.collapsed li a span {
     line-clamp: 1;
     opacity: 0;
     width: 0;
+    padding: 0;
+    margin: 0;
   }
 
   #sidebar.collapsed li a:hover {
@@ -199,7 +210,6 @@ import {
       opacity 0.2s ease,
       visibility 0.2s ease;
   }
-  
 </style>
 
 <script>
