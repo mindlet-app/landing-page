@@ -1,55 +1,266 @@
 ---
+import DesktopDrawer from "@components/app/layout/desktop-drawer.astro";
+import MobileDrawer from "@components/app/layout/mobile-drawer.astro";
 import "../styles/app.css";
-import "@components/app/layout/sidebar.css";
-import Sidebar from "@components/app/layout/Sidebar.astro";
-import { LucidePanelLeftOpen } from "lucide-react";
-import ToggleButton from "@components/app/layout/ToggleButton.astro";
+import {
+  LucideHome,
+  LucideGalleryVerticalEnd,
+  LucideSwords,
+  LucideSettings,
+  LucideHelpCircle,
+} from "lucide-react";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Enterprise Dashboard</title>
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>Mindlet</title>
   </head>
-  <body class="bg-slate-50">
-    <div class="drawer lg:drawer-open" id="drawer-container">
-      <input id="my-drawer" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content transition-all duration-300 ease-in-out">
-        <main class="min-h-screen p-6 md:p-8 lg:p-10">
-          <!-- Mobile toggle button -->
-          <ToggleButton
-            id="drawer-open-btn"
-            ariaLabel="Open sidebar"
-            className="fixed top-4 left-4 z-20 flex h-10 w-10 items-center justify-center bg-white shadow-md rounded-md cursor-pointer hover:bg-gray-50 transition-all lg:hidden"
-          >
-            <LucidePanelLeftOpen className="h-5 w-5 text-slate-700" />
-          </ToggleButton>
-
-          <!-- Desktop toggle button -->
-          <ToggleButton
-            id="desktop-sidebar-open-btn"
-            ariaLabel="Open sidebar"
-            className="fixed top-4 left-4 z-20 hidden h-10 w-10 items-center justify-center rounded-md bg-white shadow-lg cursor-pointer hover:bg-gray-50 transition-all"
-          >
-            <LucidePanelLeftOpen className="h-5 w-5 text-slate-700" />
-          </ToggleButton>
-
-          <div
-            class="min-h-[calc(100vh-8rem)] p-6 bg-white rounded-xl shadow-sm"
-          >
-            <slot />
+  <body class="bg-gray-50 font-raleway min-h-screen min-w-screen">
+    <div class="navbar bg-white border-b border-gray-200 top-0 z-50">
+      <div class="flex-none">
+        <div class="drawer">
+          <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+          <div class="drawer-content">
+            <MobileDrawer />
+            <DesktopDrawer />
           </div>
-        </main>
+          <div class="drawer-side z-50">
+            <label
+              for="my-drawer"
+              aria-label="close sidebar"
+              class="drawer-overlay"></label>
+            <div class="bg-white text-gray-800 h-full w-80 p-0 shadow-xl">
+              <ul class="menu p-4">
+                <li>
+                  <a
+                    class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+                  >
+                    <LucideHome className="h-5 w-5 text-neutral" />
+                    <span class="ml-3 font-medium">Tableau de bord</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+                  >
+                    <LucideGalleryVerticalEnd
+                      className="h-5 w-5 text-neutral"
+                    />
+                    <span class="ml-3 font-medium">Collection</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+                  >
+                    <LucideSwords className="h-5 w-5 text-neutral" />
+                    <span class="ml-3 font-medium">Entraînement</span>
+                  </a>
+                </li>
+                <li class="mt-2">
+                  <div class="border-t border-gray-200 my-2"></div>
+                </li>
+                <li>
+                  <a
+                    class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+                  >
+                    <LucideSettings className="h-5 w-5 text-neutral" />
+                    <span class="ml-3 font-medium">Paramètres</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+                  >
+                    <LucideHelpCircle className="h-5 w-5 text-neutral" />
+                    <span class="ml-3 font-medium">Support</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <Sidebar />
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl font-semibold">Mindlet</a>
+      </div>
     </div>
+    <main class="flex h-full">
+      <!-- Sidebar permanente pour écrans desktop -->
+      <div class="hidden lg:block">
+        <div
+          class="w-64 h-screen bg-white border-r border-gray-200 transition-all duration-300"
+          id="sidebar"
+        >
+          <ul class="menu p-4">
+            <li class="h-10 ">
+              <a
+                class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+              >
+                <LucideHome className="h-5 w-5 text-neutral" />
+                <span class="ml-3 font-medium sidebar-text"
+                  >Tableau de bord</span
+                >
+              </a>
+            </li>
+            <li class="h-10">
+              <a
+                class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+              >
+                <LucideGalleryVerticalEnd className="h-5 w-5 text-neutral" />
 
-    <script src="@components//app/layout/sidebar.js"></script>
+                <span class="ml-3 font-medium sidebar-text">Collection</span>
+              </a>
+            </li>
+            <li class="h-10">
+              <a
+                class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+              >
+                <LucideSwords className="h-5 w-5 text-neutral" />
+                <span class="ml-3 font-medium sidebar-text">Entraînement</span>
+              </a>
+            </li>
+            <li class="mt-2">
+              <div class="border-t border-gray-200 my-2"></div>
+            </li>
+            <li class="h-10">
+              <a
+                class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+              >
+                <LucideSettings className="h-5 w-5 text-neutral" />
+                <span class="ml-3 font-medium sidebar-text">Paramètres</span>
+              </a>
+            </li>
+            <li class="h-10">
+              <a
+                class="flex items-center py-3 hover:bg-gray-100 rounded-lg text-nowrap"
+              >
+                <LucideHelpCircle className="h-5 w-5 text-neutral" />
+                <span class="ml-3 font-medium sidebar-text">Support</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex-1 p-6">
+        <slot />
+      </div>
+    </main>
   </body>
 </html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #sidebar.collapsed {
+    width: 5rem;
+  }
+
+  #sidebar.collapsed .sidebar-text {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Ajout des styles pour corriger le hover */
+  #sidebar.collapsed li a {
+    justify-content: center;
+
+  }
+
+  #sidebar.collapsed li a span {
+    line-clamp: 1;
+    opacity: 0;
+    width: 0;
+  }
+
+  #sidebar.collapsed li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  /* Fin des styles ajoutés */
+
+  #sidebar {
+    transition: width 0.3s ease;
+  }
+
+  .sidebar-text {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+  }
+  
+</style>
+
+<script>
+  const sidebar = document.getElementById("sidebar");
+
+  // Créer le bouton de toggle avec une classe pour pouvoir le styler
+  const toggleButton = document.createElement("button");
+  toggleButton.className = "btn btn-ghost btn-sm sidebar-toggle-btn";
+  toggleButton.innerHTML = `
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+    </svg>
+  `;
+
+  // Ajouter le bouton dans la sidebar
+  if (sidebar) {
+    // Vérifier si .px-4.py-6 existe avant d'ajouter le bouton
+    const container =
+      sidebar.querySelector(".px-4.py-6") || sidebar.querySelector("ul");
+    if (container) {
+      // S'il existe, ajouter le bouton à la fin
+      container.appendChild(toggleButton);
+    } else {
+      // Sinon, ajouter le bouton au début de la sidebar
+      sidebar.insertBefore(toggleButton, sidebar.firstChild);
+    }
+  }
+
+  let isCollapsed = false;
+
+  toggleButton.addEventListener("click", () => {
+    isCollapsed = !isCollapsed;
+
+    if (sidebar) {
+      sidebar.classList.toggle("collapsed", isCollapsed);
+    }
+
+    if (isCollapsed) {
+      toggleButton.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+        </svg>
+      `;
+    } else {
+      toggleButton.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+        </svg>
+      `;
+    }
+  });
+
+  // Positionner le bouton toggle
+  const style = document.createElement("style");
+  style.textContent = `
+    .sidebar-toggle-btn {
+      position: absolute;
+      top: 1rem;
+      right: 0.5rem;
+      z-index: 10;
+    }
+  `;
+  document.head.appendChild(style);
+</script>

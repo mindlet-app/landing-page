@@ -1,18 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: mindlet-theme --default
-  root: ":root";
-  include: ;
-  exclude: ;
-  prefix: ;
-  logs: true;
+  themes: light --default;
 }
-
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  prefersdark: false;
-  color-scheme: "light";
   --color-base-100: oklch(98% 0.002 247.839);
   --color-base-200: oklch(96% 0.003 264.542);
   --color-base-300: oklch(92% 0.006 264.531);
@@ -33,14 +25,6 @@
   --color-warning-content: oklch(0.98 0.0113 176.32);
   --color-error: oklch(0.57 0.2186 27.81);
   --color-error-content: oklch(0.98 0.0113 176.32);
-  --radius-selector: 0.5rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 1px;
-  --depth: 1;
-  --noise: 0;
 }
 
 @font-face {
