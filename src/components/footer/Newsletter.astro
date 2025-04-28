@@ -100,6 +100,9 @@ import Title from "../ui/Title";
               "success"
             );
             form.reset();
+          } else if (response.status === 400) {
+            // Erreur de validation
+            showMessage("Vous êtes déjà inscrit à la newsletter !", "info");
           } else {
             // Erreur côté serveur
             showMessage(data.message || "Une erreur est survenue. Veuillez réessayer.", "error");
@@ -115,9 +118,9 @@ import Title from "../ui/Title";
       });
     }
 
-    function showMessage(text: string, type: "success" | "error" | "loading") {
+    function showMessage(text: string, type: "success" | "error" | "loading" | "info") {
       messageDiv.textContent = text;
-      messageDiv.classList.remove("hidden", "text-emerald-600", "text-red-600", "text-zinc-600");
+      messageDiv.classList.remove("hidden", "text-emerald-600", "text-red-600", "text-zinc-600", "text-yellow-600");
 
       switch (type) {
         case "success":
@@ -128,6 +131,9 @@ import Title from "../ui/Title";
           break;
         case "loading":
           messageDiv.classList.add("text-zinc-600");
+          break;
+        case "info":
+          messageDiv.classList.add("text-yellow-600");
           break;
       }
     }
