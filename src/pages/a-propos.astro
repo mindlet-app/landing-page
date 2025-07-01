@@ -1,0 +1,117 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BigTitle from "../components/ui/BigTitle";
+import Title from "../components/ui/Title";
+import Paragraph from "../components/ui/Paragraph";
+import Button from "../components/ui/Button";
+import { Card } from "../components/ui/Card";
+---
+
+<Layout>
+  <section id="notre-histoire" class="container mx-auto px-4 py-16 md:py-24">
+    <BigTitle>De l’idée à la mission : l’histoire de Mindlet</BigTitle>
+    <Paragraph className="mb-4 max-w-2xl mx-auto">
+      Nous sommes deux étudiants en Master Informatique à l’Université de Corte, en Corse,
+      passionnés par la technologie et l’innovation. Mindlet est né d’un simple projet d’étude en
+      Licence, sans grandes ambitions au départ. Mais quelques mois plus tard, en discutant avec des
+      amis qui utilisaient des applications comme Anki ou Quizlet, nous avons eu un déclic :
+      pourquoi ne pas créer une plateforme qui révolutionne l’apprentissage avec l’intelligence
+      artificielle et la collaboration ?
+    </Paragraph>
+    <Paragraph className="mb-8 max-w-2xl mx-auto">
+      Aujourd’hui, notre mission est claire : rendre l’apprentissage accessible, interactif et
+      engageant pour tous, des collégiens aux universitaires. Nous rêvons d’intégrer Mindlet dans
+      les établissements scolaires pour permettre aux professeurs de partager des cours, créer des
+      collections de flashcards, des quiz et des jeux éducatifs avec classements, dans un esprit
+      ludique et motivant.
+    </Paragraph>
+  </section>
+
+  <section
+    id="pourquoi-mindlet"
+    class="container mx-auto px-4 py-12 md:py-20 bg-neutral-50 rounded-2xl mb-8"
+  >
+    <Title>Pourquoi choisir Mindlet ?</Title>
+    <ul class="list-disc pl-6 space-y-4 max-w-2xl mx-auto text-zinc-700">
+      <li>
+        <b>Apprentissage intelligent grâce à l’IA :</b> Notre algorithme adapte vos révisions en fonction
+        de vos performances et génère des contenus personnalisés en quelques secondes.
+      </li>
+      <li>
+        <b>Collaboration au cœur de l’expérience :</b> Partagez des collections, rejoignez des groupes
+        thématiques et apprenez ensemble via un réseau social dédié.
+      </li>
+      <li>
+        <b>Flexibilité et innovation :</b> Importez des contenus de multiples sources (PDF, YouTube,
+        actualités) et transformez-les en outils d’apprentissage.
+      </li>
+      <li>
+        <b>Pour tous les niveaux :</b> Que vous soyez collégien, lycéen, étudiant ou enseignant, Mindlet
+        s’adapte à vos besoins.
+      </li>
+    </ul>
+  </section>
+
+  <section id="reseau-collaboratif" class="container mx-auto px-4 py-12 md:py-20">
+    <Title>Apprenez mieux, ensemble</Title>
+    <Paragraph className="mb-6 max-w-2xl mx-auto">
+      Mindlet, c’est bien plus qu’une application d’apprentissage : c’est une communauté. Nous
+      croyons que l’éducation est plus efficace quand elle est partagée. Notre plateforme intègre un
+      réseau social où vous pouvez connecter avec d’autres apprenants, échanger des connaissances et
+      trouver des partenaires d’étude à travers le monde.
+    </Paragraph>
+    <Card className="mb-6 max-w-3xl mx-auto">
+      <ul class="list-disc pl-6 space-y-3 text-zinc-700 text-left">
+        <li>
+          <b>Groupes thématiques :</b> Créez ou rejoignez des groupes pour partager des collections de
+          cartes et collaborer en temps réel.
+        </li>
+        <li>
+          <b>Défis et classements :</b> Lancez des défis à vos amis et suivez vos progrès via des tableaux
+          de classement motivants.
+        </li>
+        <li>
+          <b>Partage de contenu :</b> Publiez vos collections de flashcards et recevez des suggestions
+          de la communauté pour les enrichir.
+        </li>
+      </ul>
+    </Card>
+  </section>
+
+  <section
+    id="nos-valeurs"
+    class="container mx-auto px-4 py-12 md:py-20 bg-neutral-50 rounded-2xl mb-8"
+  >
+    <Title>Nos valeurs, notre engagement</Title>
+    <Paragraph className="mb-6 max-w-2xl mx-auto">
+      Chez Mindlet, nous ne faisons pas que développer une application : nous construisons une
+      vision de l’apprentissage de demain, ancrée dans des valeurs fortes. En tant qu’entreprise
+      européenne fondée en Corse, nous mettons un point d’honneur à respecter l’éthique, la
+      transparence et l’accessibilité.
+    </Paragraph>
+    <Card className="mb-6 max-w-3xl mx-auto">
+      <ul class="list-disc pl-6 space-y-3 text-zinc-700 text-left">
+        <li>
+          <b>Respecter vos données :</b> Conformité totale au RGPD et transparence sur l’utilisation
+          de vos informations.
+        </li>
+        <li>
+          <b>Garantir la qualité :</b> Contenus vérifiables, enrichis par la communauté, avec un système
+          de badges pour la fiabilité.
+        </li>
+        <li>
+          <b>Écouter notre communauté :</b> Un comité mensuel avec nos utilisateurs pour co-construire
+          l’avenir de Mindlet.
+        </li>
+        <li>
+          <b>Rester accessibles :</b> Pas de frais cachés, des tarifs clairs et une roadmap publique
+          régulièrement mise à jour.
+        </li>
+      </ul>
+    </Card>
+  </section>
+
+  <section class="container mx-auto px-4 py-16 flex flex-col items-center">
+    <Button variant="primary" className="text-lg px-8 py-4 mt-4 shadow-lg">Rejoignez-nous</Button>
+  </section>
+</Layout>
