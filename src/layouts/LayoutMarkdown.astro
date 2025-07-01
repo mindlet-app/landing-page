@@ -1,9 +1,9 @@
 ---
+import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import SEO from "../components/SEO.astro";
 import "../styles/app.css";
 import "../styles/markdown.css";
-import Footer from "../components/Footer.astro";
-import SEO from "../components/SEO.astro";
 ---
 
 <!doctype html>
@@ -13,9 +13,8 @@ import SEO from "../components/SEO.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <SEO />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>Mindlet</title>
+    <SEO />
   </head>
   <body class="bg-neutral-50 font-raleway">
     <Navbar />

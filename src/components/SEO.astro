@@ -1,22 +1,27 @@
 ---
 import { SEO as AstroSEO } from "astro-seo";
+
+const { title: pageTitle } = Astro.props;
+
+const defaultTitle = "Mindlet - L'apprentissage collaboratif assisté par IA";
+const defaultDescription =
+  "Première plateforme sociale d'apprentissage collaboratif assisté par IA. Créez, partagez et apprenez avec des flashcards, quiz et exercices d'association dans un environnement social européen.";
 ---
 
 <AstroSEO
-  title="Mindlet | L'apprentissage collaboratif réinventé par l'IA"
-  titleTemplate="%s | Mindlet"
-  description="Première plateforme sociale d'apprentissage collaboratif assisté par IA. Créez, partagez et apprenez avec des flashcards, quiz et exercices d'association dans un environnement social européen."
+  title={pageTitle || "L'apprentissage collaboratif assisté par IA"}
+  titleTemplate="Mindlet - %s"
   canonical="https://mindlet.app/"
+  description={defaultDescription}
   openGraph={{
     basic: {
-      title: "Mindlet - Apprentissage collaboratif assisté par IA",
+      title: defaultTitle,
       type: "website",
       image: "https://mindlet.app/images/hero-image.png",
       url: "https://mindlet.app/",
     },
     optional: {
-      description:
-        "Première plateforme sociale d'apprentissage collaboratif assisté par IA. Créez, partagez et apprenez avec des flashcards, quiz et exercices d'association dans un environnement social européen",
+      description: defaultDescription,
       locale: "fr_FR",
       siteName: "Mindlet",
       localeAlternate: ["en_US", "de_DE", "it_IT", "es_ES"],
@@ -26,14 +31,66 @@ import { SEO as AstroSEO } from "astro-seo";
     card: "summary_large_image",
     site: "@mindletapp",
     creator: "@mindletapp",
-    title: "Mindlet - L'apprentissage collaboratif, assisté par l'IA",
+    title: defaultTitle,
     image: "https://mindlet.app/images/hero-image.png",
     imageAlt:
-      "Interface de Mindlet montrant des flashcards et des fonctionnalités collaboratives",
+      "Capture d'écran de notre page d'accueil avec le titre : L'apprentissage collaboratif, assisté par l'IA. et les Memojis connectés.",
     description:
-      "Plateforme sociale d'apprentissage avec flashcards, quiz et exercices d'association. Réinventez votre façon d'apprendre avec l'IA.",
+      "Plateforme sociale d'apprentissage collaboratif avec flashcards, quiz et exercices d'association. Réinventez votre façon d'apprendre avec l'IA.",
   }}
   extend={{
+    meta: [
+      {
+        name: "title",
+        content: defaultTitle,
+      },
+      { name: "theme-color", content: "#1fdb99" },
+      { name: "application-name", content: "Mindlet" },
+      { name: "apple-mobile-web-app-title", content: "Mindlet" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+      { name: "format-detection", content: "telephone=no" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "msapplication-config", content: "/browserconfig.xml" },
+      { name: "msapplication-TileColor", content: "#9758E4" },
+      { name: "msapplication-tap-highlight", content: "no" },
+
+      // Mots-clés pertinents
+      {
+        name: "keywords",
+        content:
+          "apprentissage collaboratif, flashcards IA, répétition espacée, quiz interactifs, apprentissage intelligent, réseau social éducatif, collections de cartes, Mindlet, application apprentissage, révision étudiants, outils éducatifs, IA éducation, collaboration apprentissage, flashcards personnalisées, import contenu éducatif, actualités éducatives, apprentissage langues, plateforme scolaire, éducation numérique, RGPD éducation, startup européenne",
+      },
+
+      // Métadonnées supplémentaires pour les réseaux sociaux
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Mindlet" },
+      { property: "og:title", content: defaultTitle },
+      {
+        property: "og:description",
+        content: defaultDescription,
+      },
+      {
+        property: "og:image",
+        content: "https://mindlet.app/images/hero-image.png",
+      },
+      { property: "og:url", content: "https://mindlet.app/" },
+      { property: "og:locale", content: "fr_FR" },
+
+      // Métadonnées pour la recherche mobile
+      // { name: "apple-itunes-app", content: "app-id=yourAppStoreID" }, // Si vous avez une app iOS
+      // { name: "google-play-app", content: "app-id=app.mindlet.mobile" }, // Si vous avez une app Android
+
+      // Métadonnées structurées pour les moteurs de recherche
+      {
+        property: "schema:name",
+        content: defaultTitle,
+      },
+      {
+        property: "schema:description",
+        content: defaultDescription,
+      },
+    ],
     link: [
       { rel: "icon", href: "/favicon.svg" },
       {
@@ -54,60 +111,6 @@ import { SEO as AstroSEO } from "astro-seo";
         href: "/icons/favicon-16x16.png",
       },
       { rel: "manifest", href: "/manifest.json" },
-    ],
-    meta: [
-      {
-        name: "title",
-        content: "Mindlet - L'apprentissage collaboratif, assisté par l'IA",
-      },
-      { name: "theme-color", content: "#1fdb99" },
-      { name: "application-name", content: "Mindlet" },
-      { name: "apple-mobile-web-app-capable", content: "yes" },
-      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
-      { name: "apple-mobile-web-app-title", content: "Mindlet" },
-      { name: "format-detection", content: "telephone=no" },
-      { name: "mobile-web-app-capable", content: "yes" },
-      { name: "msapplication-config", content: "/browserconfig.xml" },
-      { name: "msapplication-TileColor", content: "#9758E4" },
-      { name: "msapplication-tap-highlight", content: "no" },
-
-      // Mots-clés pertinents
-      {
-        name: "keywords",
-        content:
-          "mindlet, apprentissage, flashcards, quiz, IA, intelligence artificielle, éducation, social learning, répétition espacée, collaboration, Europe",
-      },
-
-      // Métadonnées supplémentaires pour les réseaux sociaux
-      { property: "og:site_name", content: "Mindlet" },
-      { property: "og:type", content: "website" },
-      { property: "og:title", content: "Mindlet - Apprentissage collaboratif" },
-      {
-        property: "og:description",
-        content:
-          "Première plateforme sociale d'apprentissage collaboratif assisté par IA. Créez, partagez et apprenez avec des flashcards, quiz et exercices d'association dans un environnement social européen.",
-      },
-      {
-        property: "og:image",
-        content: "https://mindlet.app/images/hero-image.png",
-      },
-      { property: "og:url", content: "https://mindlet.app/" },
-      { property: "og:locale", content: "fr_FR" },
-
-      // Métadonnées pour la recherche mobile
-      // { name: "apple-itunes-app", content: "app-id=yourAppStoreID" }, // Si vous avez une app iOS
-      // { name: "google-play-app", content: "app-id=com.mindlet.app" }, // Si vous avez une app Android
-
-      // Métadonnées structurées pour les moteurs de recherche
-      {
-        property: "schema:name",
-        content: "Mindlet - Plateforme d'apprentissage collaboratif",
-      },
-      {
-        property: "schema:description",
-        content:
-          "Mindlet vous permet de créer, partager et apprendre avec des flashcards, quiz et exercices d'association dans un environnement social et collaboratif assisté par l'IA.",
-      },
     ],
   }}
 />

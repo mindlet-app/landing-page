@@ -1,13 +1,6 @@
 User-agent: *
 Allow: /
 
-# Protection des chemins administratifs et privés
-# Disallow: /admin/
-# Disallow: /dashboard/api/
-# Disallow: /user/settings/
-# Disallow: /private/
-# Disallow: /*/preview
-
 # Optimisation de l'exploration
 Crawl-delay: 1
 

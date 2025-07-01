@@ -1,7 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import "../styles/app.css";
 import SEO from "../components/SEO.astro";
+import "../styles/app.css";
 ---
 
 <!doctype html>
@@ -11,13 +11,14 @@ import SEO from "../components/SEO.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <SEO />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <title>Mindlet</title>
+    <SEO />
   </head>
   <body class="bg-neutral-50 font-raleway">
     <Navbar />
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
 
