@@ -1,0 +1,22 @@
+---
+import FlashcardMode from "../learning-modes/FlashcardMode.astro";
+import QuizMode from "../learning-modes/QuizMode.astro";
+import MatchMode from "../learning-modes/MatchMode.astro";
+import BigTitle from "../ui/BigTitle";
+import Paragraph from "../ui/Paragraph";
+---
+
+<section id="modes-apprentissage" class="pt-20">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <BigTitle> Nos modes d'apprentissage </BigTitle>
+      <Paragraph>
+        Choisissez le mode qui vous convient le mieux pour apprendre et mémoriser efficacement.
+      </Paragraph>
+    </div>
+
+    <FlashcardMode />
+    <QuizMode />
+    <MatchMode />
+  </div>
+</section>

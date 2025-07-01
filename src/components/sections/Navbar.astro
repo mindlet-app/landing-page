@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { LucideMenu } from "lucide-react";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 ---
 
 <nav
@@ -25,44 +25,34 @@ import Button from "./ui/Button";
           width="40"
           height="40"
         />
-        <h1 class="text-lg md:text-xl font-bold font-saeada text-zinc-900">
-          Mindlet
-        </h1>
+        <h1 class="text-lg md:text-xl font-bold font-saeada text-zinc-900">Mindlet</h1>
       </a>
       <!-- Menu pour desktop -->
       <ul class="hidden md:flex gap-x-6">
         <li>
           <a
             href="/#modes-apprentissage"
-            class="text-zinc-600 hover:text-emerald-500 transition-colors"
-            >Modes d'apprentissage</a
+            class="text-zinc-600 hover:text-emerald-500 transition-colors">Modes d'apprentissage</a
           >
         </li>
         <li>
-          <a
-            href="/#presentation-ia"
-            class="text-zinc-600 hover:text-emerald-500 transition-colors"
+          <a href="/#presentation-ia" class="text-zinc-600 hover:text-emerald-500 transition-colors"
             >Intelligence artificielle</a
           >
         </li>
         <li>
           <a
             href="/#apprendre-ensemble"
-            class="text-zinc-600 hover:text-emerald-500 transition-colors"
-            >Apprendre ensemble</a
+            class="text-zinc-600 hover:text-emerald-500 transition-colors">Apprendre ensemble</a
           >
         </li>
         <li>
-          <a
-            href="/#notre-vision"
-            class="text-zinc-600 hover:text-emerald-500 transition-colors"
+          <a href="/#notre-vision" class="text-zinc-600 hover:text-emerald-500 transition-colors"
             >Notre vision
           </a>
         </li>
         <li>
-          <a
-            href="/#contact"
-            class="text-zinc-600 hover:text-emerald-500 transition-colors"
+          <a href="/#contact" class="text-zinc-600 hover:text-emerald-500 transition-colors"
             >Contact</a
           >
         </li>
@@ -71,9 +61,7 @@ import Button from "./ui/Button";
 
     <div class="flex items-center gap-x-4">
       <a href="/commencer">
-        <Button className="text-sm md:text-base px-3 py-1.5 md:px-4 md:py-2">
-          Commencer
-        </Button>
+        <Button className="text-sm md:text-base px-3 py-1.5 md:px-4 md:py-2"> Commencer </Button>
       </a>
 
       <!-- Bouton hamburger pour mobile -->
@@ -92,9 +80,7 @@ import Button from "./ui/Button";
     id="mobile-menu"
     class="md:hidden overflow-hidden max-h-0 transition-all duration-300 ease-in-out"
   >
-    <div
-      class="py-4 px-2 bg-white/90 backdrop-blur-sm rounded-lg mt-2 shadow-sm"
-    >
+    <div class="py-4 px-2 bg-white/90 backdrop-blur-sm rounded-lg mt-2 shadow-sm">
       <ul class="flex flex-col items-center gap-y-4">
         <li>
           <a
@@ -120,14 +106,11 @@ import Button from "./ui/Button";
         <li>
           <a
             href="/#notre-vision"
-            class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
-            >Notre vision</a
+            class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg">Notre vision</a
           >
         </li>
         <li>
-          <a
-            href="/#contact"
-            class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
+          <a href="/#contact" class="text-zinc-600 hover:text-emerald-500 transition-colors text-lg"
             >Contact</a
           >
         </li>

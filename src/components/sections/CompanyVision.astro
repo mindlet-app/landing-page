@@ -1,19 +1,8 @@
 ---
-import map from "../assets/map.png";
-import { Image } from "astro:assets";
-import Title from "./ui/Title";
-import {
-  Home,
-  Shield,
-  DollarSign,
-  Users,
-  CheckCircle,
-  Book,
-  Award,
-  Star,
-} from "lucide-react";
-import BigTitle from "./ui/BigTitle";
-import Paragraph from "./ui/Paragraph";
+import { Award, Book, CheckCircle, Home, Shield, Users } from "lucide-react";
+import BigTitle from "../ui/BigTitle";
+import Paragraph from "../ui/Paragraph";
+import Title from "../ui/Title";
 ---
 
 <section id="notre-vision" class="py-24 overflow-hidden relative">
@@ -23,9 +12,8 @@ import Paragraph from "./ui/Paragraph";
     <div class="flex flex-col items-center mb-16">
       <BigTitle> Notre vision de l'apprentissage de demain</BigTitle>
       <Paragraph className="mb-8">
-        Mindlet n'est pas qu'un simple produit — c'est un engagement pour un
-        apprentissage accessible, éthique et transparent, conçu en Europe pour
-        le monde entier.
+        Mindlet n'est pas qu'un simple produit — c'est un engagement pour un apprentissage
+        accessible, éthique et transparent, conçu en Europe pour le monde entier.
       </Paragraph>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16">
@@ -39,10 +27,9 @@ import Paragraph from "./ui/Paragraph";
               <Title className="mb-0"> Une entreprise ancrée en Europe </Title>
             </div>
             <Paragraph>
-              Fondée en Corse par deux ingénieurs français diplômés, Mindlet est
-              fièrement européenne de sa conception à son infrastructure. Nous
-              développons une alternative aux géants technologiques
-              non-européens.
+              Fondée en Corse par deux ingénieurs français diplômés, Mindlet est fièrement
+              européenne de sa conception à son infrastructure. Nous développons une alternative aux
+              géants technologiques non-européens.
             </Paragraph>
             <div class="pl-16 inline-block">
               <span
@@ -62,11 +49,10 @@ import Paragraph from "./ui/Paragraph";
               <Title className="mb-0"> Sécurité et transparence </Title>
             </div>
             <Paragraph>
-              Nos services sont conçus dans le respect total du RGPD et des
-              règles européennes sur l'IA, avec une transparence complète sur
-              nos tarifs et l'utilisation des données. Nous utilisons des
-              technologies open source et opérons avec un modèle économique
-              clair, sans surprises.
+              Nos services sont conçus dans le respect total du RGPD et des règles européennes sur
+              l'IA, avec une transparence complète sur nos tarifs et l'utilisation des données. Nous
+              utilisons des technologies open source et opérons avec un modèle économique clair,
+              sans surprises.
             </Paragraph>
 
             <div class="pl-16 flex flex-wrap gap-2 mb-6">
@@ -90,8 +76,7 @@ import Paragraph from "./ui/Paragraph";
                   <span class="text-sm font-medium text-slate-700"
                     >Notre engagement envers vous</span
                   >
-                  <span
-                    class="text-xs px-2 py-1 bg-emerald-100 text-emerald-800 rounded-full"
+                  <span class="text-xs px-2 py-1 bg-emerald-100 text-emerald-800 rounded-full"
                     >Garanti</span
                   >
                 </div>
@@ -99,23 +84,17 @@ import Paragraph from "./ui/Paragraph";
 
               <div class="space-y-2 text-sm text-slate-600">
                 <div class="flex items-start">
-                  <CheckCircle
-                    className="h-5 w-5 text-emerald-500 mr-2 mt-0.5 flex-shrink-0"
-                  />
+                  <CheckCircle className="h-5 w-5 text-emerald-500 mr-2 mt-0.5 flex-shrink-0" />
                   <p>Pas de frais cachés ou d'augmentations surprises</p>
                 </div>
 
                 <div class="flex items-start">
-                  <CheckCircle
-                    className="h-5 w-5 text-emerald-500 mr-2 mt-0.5 flex-shrink-0"
-                  />
+                  <CheckCircle className="h-5 w-5 text-emerald-500 mr-2 mt-0.5 flex-shrink-0" />
                   <p>Explication claire de l'utilisation des données</p>
                 </div>
 
                 <div class="flex items-start">
-                  <CheckCircle
-                    className="h-5 w-5 text-emerald-500 mr-2 mt-0.5 flex-shrink-0"
-                  />
+                  <CheckCircle className="h-5 w-5 text-emerald-500 mr-2 mt-0.5 flex-shrink-0" />
                   <p>Roadmap publiée et mise à jour régulièrement</p>
                 </div>
               </div>
@@ -133,9 +112,8 @@ import Paragraph from "./ui/Paragraph";
               <Title className="mb-0"> Qualité et vérification </Title>
             </div>
             <Paragraph>
-              Nos contenus sont vérifiables et enrichis par la communauté. Un
-              système de badges indique la fiabilité des flashcards et permet
-              d'ajouter des références.
+              Nos contenus sont vérifiables et enrichis par la communauté. Un système de badges
+              indique la fiabilité des flashcards et permet d'ajouter des références.
             </Paragraph>
             <!-- Badge System Example -->
             <div class="pl-16 mb-5">
@@ -150,9 +128,7 @@ import Paragraph from "./ui/Paragraph";
                   <p class="text-xs text-slate-500">Sources confirmées</p>
                 </div>
 
-                <div
-                  class="p-3 rounded-lg flex flex-col items-center text-center"
-                >
+                <div class="p-3 rounded-lg flex flex-col items-center text-center">
                   <div
                     class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mb-2"
                   >
@@ -162,9 +138,7 @@ import Paragraph from "./ui/Paragraph";
                   <p class="text-xs text-slate-500">Références scolaires</p>
                 </div>
 
-                <div
-                  class="p-3 rounded-lg flex flex-col items-center text-center"
-                >
+                <div class="p-3 rounded-lg flex flex-col items-center text-center">
                   <div
                     class="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center mb-2"
                   >
@@ -184,9 +158,9 @@ import Paragraph from "./ui/Paragraph";
               <Title className="mb-0"> Gouvernance communautaire </Title>
             </div>
             <Paragraph
-              >Chaque mois, nous organisons un comité avec nos utilisateurs pour
-              échanger sur l'évolution de l'application. Votre voix compte dans
-              nos décisions et nos priorités de développement.</Paragraph
+              >Chaque mois, nous organisons un comité avec nos utilisateurs pour échanger sur
+              l'évolution de l'application. Votre voix compte dans nos décisions et nos priorités de
+              développement.</Paragraph
             >
           </div>
         </div>

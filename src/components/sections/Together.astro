@@ -1,13 +1,13 @@
 ---
-import Paragraph from "./ui/Paragraph";
-import graphTogether from "../assets/graph-together.svg";
+import Paragraph from "../ui/Paragraph";
+import graphTogether from "../../assets/graph-together.svg";
 import { Image } from "astro:assets";
-import Title from "./ui/Title";
-import BigTitle from "./ui/BigTitle";
-import messages from "../assets/messages.svg";
-import socialNetwork from "../assets/social-network.svg";
-import versus from "../assets/versus.svg";
-import copyCollection from "../assets/copy-collection.svg";
+import Title from "../ui/Title";
+import BigTitle from "../ui/BigTitle";
+import messages from "../../assets/messages.svg";
+import socialNetwork from "../../assets/social-network.svg";
+import versus from "../../assets/versus.svg";
+import copyCollection from "../../assets/copy-collection.svg";
 ---
 
 <section id="apprendre-ensemble" class="pt-28">
@@ -15,8 +15,8 @@ import copyCollection from "../assets/copy-collection.svg";
     <div class="text-center">
       <BigTitle> Apprenez mieux, ensemble </BigTitle>
       <Paragraph className="max-w-2xl mx-auto">
-        Mindlet combine les méthodes d'apprentissage les plus efficaces avec la
-        puissance du social pour une expérience éducative révolutionnaire.
+        Mindlet combine les méthodes d'apprentissage les plus efficaces avec la puissance du social
+        pour une expérience éducative révolutionnaire.
       </Paragraph>
     </div>
 
@@ -30,21 +30,16 @@ import copyCollection from "../assets/copy-collection.svg";
       <div class="flex flex-col">
         <Title className="text-center">Messages et groupes</Title>
         <Paragraph>
-          Créez ou rejoignez des groupes thématiques pour partager des
-          collections de cartes. Collaborez en temps réel pour enrichir vos
-          connaissances.
+          Créez ou rejoignez des groupes thématiques pour partager des collections de cartes.
+          Collaborez en temps réel pour enrichir vos connaissances.
         </Paragraph>
-        <Image
-          src={messages}
-          alt="Feature 1"
-          class="w-[35%] md:w-[40%] mx-auto mb-4 aspect-3/2"
-        />
+        <Image src={messages} alt="Feature 1" class="w-[35%] md:w-[40%] mx-auto mb-4 aspect-3/2" />
       </div>
       <div class="flex flex-col">
         <Title className="text-center">Reseau social</Title>
         <Paragraph>
-          Connectez-vous avec d'autres apprenants, partagez vos connaissances et
-          trouvez des partenaires d'étude partout dans le monde.
+          Connectez-vous avec d'autres apprenants, partagez vos connaissances et trouvez des
+          partenaires d'étude partout dans le monde.
         </Paragraph>
         <Image
           src={socialNetwork}
@@ -55,22 +50,18 @@ import copyCollection from "../assets/copy-collection.svg";
       <div class="flex flex-col">
         <Title className="text-center">Défis entre amis</Title>
         <Paragraph>
-          Lancez des défis à vos amis, suivez vos progrès sur les tableaux de
-          classement et gagnez des badges.
+          Lancez des défis à vos amis, suivez vos progrès sur les tableaux de classement et gagnez
+          des badges.
         </Paragraph>
         <div class="flex flex-1 justify-center">
-          <Image
-            src={versus}
-            alt="Feature 1"
-            class="w-[35%] md:w-[40%] mx-auto mb-4 aspect-3/2"
-          />
+          <Image src={versus} alt="Feature 1" class="w-[35%] md:w-[40%] mx-auto mb-4 aspect-3/2" />
         </div>
       </div>
       <div class="flex flex-col">
         <Title className="text-center">Partagez vos collections</Title>
         <Paragraph>
-          Créez des collections de cartes et partagez-les avec vos amis ou la
-          communauté. Recevez des suggestions de cartes à ajouter.
+          Créez des collections de cartes et partagez-les avec vos amis ou la communauté. Recevez
+          des suggestions de cartes à ajouter.
         </Paragraph>
         <Image
           src={copyCollection}
