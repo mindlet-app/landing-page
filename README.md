@@ -1,6 +1,6 @@
-# Mindlet - L'apprentissage collaboratif réinventé par l'IA
+# Mindlet - L'apprentissage collaboratif assisté par l'IA
 
-![Mindlet Logo](https://mindlet.app/logo.png)
+![Mindlet Logo](https://mindlet.app/logo.svg)
 
 ## 📚 À propos de Mindlet
 
@@ -40,9 +40,5 @@ Ce site a été développé avec [Astro](https://astro.build/), un framework web
 - Téléphone : +33783267595
 
 ---
-
-https://daisyui.com/docs/editor/
-
----
 © 2025 Mindlet. Tous droits réservés.
-L'apprentissage collaboratif, réinventé par l'IA.
+L'apprentissage collaboratif, assisté par l'IA.
