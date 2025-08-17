@@ -1,0 +1,194 @@
+---
+import BigTitle from "../components/ui/BigTitle";
+import { Card } from "../components/ui/Card";
+import HintText from "../components/ui/HintText";
+import Paragraph from "../components/ui/Paragraph";
+import SmallTitle from "../components/ui/SmallTitle";
+import Title from "../components/ui/Title";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="lg:w-6xl mx-auto my-8 pt-20 pb-8 px-4 md:px-8">
+    <!-- En-tête -->
+    <header class="py-12 text-center">
+      <BigTitle>Sécurité et Protection des enfants</BigTitle>
+      <Paragraph className="text-lg max-w-4xl mx-auto">
+        Chez Mindlet, la sécurité des enfants est notre priorité absolue. Découvrez nos engagements,
+        nos normes et nos outils pour garantir un environnement d'apprentissage sûr et bienveillant.
+      </Paragraph>
+    </header>
+
+    <!-- Section Introduction -->
+    <section class="py-16">
+      <Title>Notre engagement pour la sécurité des enfants</Title>
+      <Paragraph className="mt-6">
+        Mindlet est conçu pour offrir un espace d'apprentissage collaboratif et intelligent, tout en
+        garantissant la sécurité et le bien-être des mineurs. Nous respectons strictement les
+        réglementations en vigueur (RGPD, loi française n°2021-478, COPPA) et collaborons avec les
+        autorités compétentes pour prévenir tout risque d'abus ou d'exploitation.
+      </Paragraph>
+      <Paragraph className="mt-4">
+        Cette page détaille nos normes, nos outils de signalement et nos contacts dédiés.
+      </Paragraph>
+    </section>
+
+    <!-- Section Normes de Sécurité -->
+    <section class="py-12">
+      <Title>Normes de sécurité des enfants</Title>
+
+      <div class="mt-12 gap-12 grid md:grid-cols-2">
+        <!-- Modération des contenus -->
+        <Card>
+          <SmallTitle>Modération des contenus</SmallTitle>
+          <Paragraph>
+            Nous utilisons une combinaison d'outils automatisés et de modération humaine pour
+            détecter et supprimer tout contenu inapproprié. Les utilisateurs peuvent signaler
+            directement les contenus suspects via un formulaire intégré.
+          </Paragraph>
+          <HintText className="mt-4">
+            Contenus interdits : images, messages ou commentaires à caractère sexuel, violent ou
+            discriminatoire.
+          </HintText>
+        </Card>
+
+        <!-- Prévention des abus -->
+        <Card>
+          <SmallTitle>Prévention des abus</SmallTitle>
+          <Paragraph>
+            Les échanges privés entre mineurs et adultes non supervisés sont strictement interdits.
+            Nous filtrons les mots-clés sensibles et vérifions les comptes suspects pour prévenir le
+            "grooming" ou toute forme de manipulation.
+          </Paragraph>
+          <HintText className="mt-4">
+            Les mineurs ne peuvent pas accéder à certains espaces réservés aux adultes sans
+            consentement parental vérifié.
+          </HintText>
+        </Card>
+
+        <!-- Collaboration avec les autorités -->
+        <Card>
+          <SmallTitle>Collaboration avec les autorités</SmallTitle>
+          <Paragraph>
+            Mindlet signale systématiquement tout contenu illicite ou situation à risque aux
+            autorités compétentes (Pharos, NCMEC). Nous respectons les procédures légales pour
+            garantir une intervention rapide et confidentielle.
+          </Paragraph>
+          <HintText className="mt-4">
+            Nos signalements respectent les lois françaises et européennes en vigueur.
+          </HintText>
+        </Card>
+
+        <!-- Éducation des utilisateurs -->
+        <Card>
+          <SmallTitle>Éducation des utilisateurs</SmallTitle>
+          <Paragraph>
+            Nous proposons des ressources pédagogiques pour sensibiliser les mineurs, parents et
+            enseignants aux risques en ligne et aux bonnes pratiques d'utilisation de Mindlet.
+          </Paragraph>
+          <HintText className="mt-4">
+            Consultez nos guides et tutoriels dans la section "Ressources" de l'application.
+          </HintText>
+        </Card>
+      </div>
+    </section>
+
+    <!-- Section Signalement -->
+    <section class="py-12">
+      <Title>Comment signaler un contenu ?</Title>
+      <Paragraph className="mt-6">
+        Vous pouvez signaler tout contenu inapproprié ou comportement suspect via notre formulaire
+        dédié, accessible directement dans l'application ou ci-dessous :
+      </Paragraph>
+
+      <div class="mt-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+        <SmallTitle>Formulaire de signalement</SmallTitle>
+        <form class="mt-6 space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Type de contenu</label>
+            <select
+              class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-primary focus:border-primary sm:text-sm rounded-md"
+            >
+              <option>Image</option>
+              <option>Message</option>
+              <option>Commentaire</option>
+              <option>Quiz</option>
+              <option>Flashcard</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700"
+              >URL ou identifiant du contenu</label
+            >
+            <input
+              type="text"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Description</label>
+            <textarea
+              rows="4"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+            ></textarea>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700"
+              >Vos coordonnées (optionnel)</label
+            >
+            <input
+              type="email"
+              placeholder="Email"
+              class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700"
+              >Joindre une preuve (capture d'écran)</label
+            >
+            <input
+              type="file"
+              class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-[#7ED7D1] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+          >
+            Envoyer le signalement
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="py-16">
+      <Title>Contact désigné pour la sécurité des enfants</Title>
+      <Paragraph className="mt-6">
+        Pour toute question ou préoccupation liée à la sécurité des enfants sur Mindlet, vous pouvez
+        contacter notre équipe dédiée :
+      </Paragraph>
+
+      <div class="mt-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+        <SmallTitle>Coordonnées</SmallTitle>
+        <Paragraph>
+          <strong>Email :</strong>
+          <a href="mailto:safety@mindlet.app" class="text-primary underline">safety@mindlet.app</a
+          ><br />
+          <strong>Réponse sous :</strong> 24 à 48h (jours ouvrés)
+        </Paragraph>
+        <HintText className="mt-4">
+          Ce contact est réservé aux questions de sécurité des enfants. Pour toute autre demande,
+          utilisez <a href="mailto:support@mindlet.app" class="text-primary underline"
+            >support@mindlet.app</a
+          >.
+        </HintText>
+      </div>
+    </section>
+  </div>
+</Layout>
