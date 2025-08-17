@@ -4,16 +4,9 @@ import { twMerge } from "tailwind-merge";
 
 interface HintTextProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
-const HintText: React.FC<HintTextProps> = ({
-  className,
-  children,
-  ...props
-}) => {
+const HintText: React.FC<HintTextProps> = ({ className, children, ...props }) => {
   return (
-    <p
-      className={twMerge(clsx("text-emerald-600 font-medium", className))}
-      {...props}
-    >
+    <p className={twMerge(clsx("text-primary font-medium", className))} {...props}>
       {children}
     </p>
   );
